@@ -31,8 +31,32 @@ body {
     background-color: #ffffff;
     scroll-behavior: smooth;
 }
-
-
+.section-top-vector{
+    width: 444.5px;
+    height: 260px;
+    left: -10%;
+    top: 2rem;
+    position: absolute;
+}
+.section-bottom-vector{
+    width: 444.5px;
+    height: 260px;
+    right: -5%;
+    bottom: 0px;
+    position: absolute;
+    z-index: 9999;
+}
+.section-bottom-vector-hero{
+    width: 444.5px;
+    height: 260px;
+    right: 13%;
+    bottom: -18%;
+    position: absolute;
+    z-index: 9999;
+}
+.top-0{
+    top: -30px !important;
+}
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -106,18 +130,96 @@ body {
 /* Hero Section */
 
 .hero-section {
-    width: 100vw;
+    width: 120vw;
     height: calc(90vh);
-    background-image: url('./Images/Hero-bg.png');
+    /* background-image: url('./Images/Hero-bg-transparent.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    padding: 105px 245px 0 118px;
+    position: relative;
+    background: linear-gradient(90deg, #0798ff0d 0%, #ffffff 100%);
+}
+.second-bg{
+    position: absolute;
+    background-image: url('./Images/Hero-bg-transparent.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 110vw;
+    height: calc(90vh);
+    top: 0;
+    z-index: 99;
+}
+.bg-gradent{
+    position: absolute;
+    left: -150px;
+    top: 0px;
+    width: 520px;
+    height: 500px;
+    background: radial-gradient(
+      ellipse at center,
+      #0799ff73 0%,
+      rgba(7, 153, 255, 0.25) 40%,
+      rgba(7, 153, 255, 0.1) 65%,
+      rgba(7, 153, 255, 0) 75%
+    );
+    filter: blur(120px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+.bg-gradent{
+    position: absolute;
+    left: -150px;
+    top: 0px;
+    width: 520px;
+    height: 500px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(7, 153, 255, 0.45) 0%,
+      rgba(7, 153, 255, 0.25) 40%,
+      rgba(7, 153, 255, 0.1) 65%,
+      rgba(7, 153, 255, 0) 75%
+    );
+    filter: blur(120px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+.bg-gradent-right{
+    position: absolute;
+    right: 30%;
+    top: -50px;
+    width: 520px;
+    height: 500px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(7, 153, 255, 0.45) 0%,
+      rgba(7, 153, 255, 0.25) 40%,
+      rgba(7, 153, 255, 0.1) 65%,
+      rgba(7, 153, 255, 0) 75%
+    );
+    filter: blur(220px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
 }
 .hero-section-wrapper {
     display: flex;
     justify-content: left;
     align-items: center;
-    height: 80vh;
+    height: 450px;
+    width: 1080px;
+    margin-left: -4rem;
+    /* background: linear-gradient(90deg, #FFFFFF 0%, #ffffff1d 100%); */
+    background-color: rgba(255, 255, 255, 0.158);
+    padding: 150px 446px 228px 96px;
+    border-radius: 44px;
+    backdrop-filter: blur(50px);
+    border: 1px solid #ffffffe9;
+    position: relative;
+    z-index: 9;
 }
 .hero-content-wrapper {
     display: flex;
@@ -163,8 +265,8 @@ body {
 .about-us-section {
     padding: 120px 0;
     width: 100%;
-    /* background: linear-gradient(180deg, #FFFFFF 0%, #001623 100%); */
     background: #fff;
+    position: relative;
 }
 .about-us-section-wrapper {
     display: flex;
@@ -307,8 +409,8 @@ body {
     margin-bottom: 8px;
 }
 .testing-icon {
-    height: 80px;
-    width: 80px;
+    height: 54px;
+    width: 54px;
 }
 .testing-title {
     font-size: 35px;
@@ -331,6 +433,8 @@ body {
     width: 100%;
     background: #fff;
     padding: 120px 0;
+    background: linear-gradient(90deg, #b1acac3b 0%, #ffffff3b 40%,  #FFFFFF 100%);
+    position: relative;
 }
 .toolset-section-wrapper {
     display: flex;
@@ -407,9 +511,18 @@ body {
     color: #fff;
     border-radius: 12px;
 }
-.we-support-card-icons {
+.we-support-card-icons-wrapper{
     height: 56px;
     width: 56px;
+    background-color: #1A212A;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.we-support-card-icons {
+    height: 28px;
+    width: 28px;
 }
 .we-support-card-title {
     font-size: 24px;
@@ -432,6 +545,7 @@ body {
 .clients-section {
     width: 100%;
     padding: 120px 0;
+    position: relative;
 }
 .clients-section-wrapper {
     display: flex;
@@ -557,6 +671,7 @@ body {
 .blog-section {
     width: 100%;
     padding: 120px 0;
+    position: relative;
 }
 .blog-wrapper {
     display: flex;

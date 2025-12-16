@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./navbar.css">
 </head>
 <body>
     <div class="main">
@@ -19,11 +20,11 @@
                         <img src="./Icons/Logo.svg" alt="" class="nav-image">
                     </div>
                     <div class="nav-links-wrapper">
-                        <a href="#" class="nav-links">HOME</a>
+                        <a href="./index.html" class="nav-links">HOME</a>
+                        <a href="./about.html" class="nav-links">ABOUT US</a>
                         <a href="#" class="nav-links">Services</a>
-                        <a href="#" class="nav-links">ABOUT US</a>
-                        <a href="#" class="nav-links">Case Study</a>
-                        <a href="#" class="nav-links">Contact us</a>
+                        <a href="#" class="nav-links">Blogs</a>
+                        <a href="#" class="nav-links">Contact Us</a>
                     </div>
                     <a href="#" class="nav-btn-wrapper">
                         Enquire Now
@@ -67,7 +68,13 @@
                             </div>
                             <a href="#" class="about-us-btn">
                                 Who We Are
-                                <img src="./Icons/right-arrow-black.svg" alt="" class="rigth-arrow">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg" class="right-arrow">
+                                <path d="M20.2498 12H4.25" />
+                                <path d="M14.5898 17.66C14.5898 14.7503 17.1524 12 20.2499 12" />
+                                <path d="M14.5898 6.33984C14.5898 9.24959 17.1524 11.9999 20.2499 11.9999" />
+                                </svg>
+
                             </a>
                         </div>
                     </div>
@@ -184,7 +191,7 @@
             </div>
             <img src="./Icons/section-top-vector.svg" alt="section top vector" class="section-top-vector top-0">
         </section>
-        <section class="testimonial-section">
+        <!-- <section class="testimonial-section">
             <div class="main-container">
                 <div class="testimonial-section-wrapper">
                     <div class="testimonial-title-wrapper">
@@ -219,7 +226,136 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+        <div class="testimonial">
+            <div class="testimonial-section">
+                <div class="section-label">TESTIMONIALS</div>
+                <h2 class="second-section-title testimonial-section-title">VOICES OF TRUST: CLIENT STORIES, TESTIMONIALS THAT ILLUMINATE OUR SHARED SUCCESS.</h2>
+                
+                <div class="slider-container">
+                    <div class="slider-wrapper" id="sliderWrapper">
+                        <!-- Cloned cards for infinite loop (end) -->
+                        <div class="testimonial-card clone">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Exceptional service and attention to detail. The team went above and beyond to ensure our project was a success. Their expertise and professionalism truly set them apart from the competition.
+                                </p>
+                                <div class="testimonial-author">Robert Martinez</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card clone">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Working with this team has been an absolute pleasure. They delivered results that exceeded our expectations and maintained excellent communication throughout the entire process.
+                                </p>
+                                <div class="testimonial-author">Emily Thompson</div>
+                            </div>
+                        </div>
+        
+                        <!-- Original cards -->
+                        <div class="testimonial-card active">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies nam dui mattis placerat fusce gravida diam fermentum. Sit sodales adipiscing rhoncus cras quam vel nam. Curabitur pellentesque vitae amet, massa venenatis risque, netus nunc. Sapien vitae dolor quis quam neque facilisi sagittis, malesuada fermentum.
+                                </p>
+                                <div class="testimonial-author">Joseph Harllow</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Outstanding quality and dedication. The results speak for themselves - our business has grown significantly since partnering with them. Highly recommend their services to anyone looking for excellence.
+                                </p>
+                                <div class="testimonial-author">Anna Doe</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    A truly transformative experience. Their innovative approach and commitment to quality helped us achieve goals we didn't think were possible. The team's expertise is unmatched.
+                                </p>
+                                <div class="testimonial-author">Michael Chen</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Professional, reliable, and results-driven. Every interaction with the team has been positive and productive. They understand our needs and consistently deliver outstanding outcomes.
+                                </p>
+                                <div class="testimonial-author">Sarah Williams</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Incredible attention to detail and customer service. They took the time to understand our vision and brought it to life perfectly. We couldn't be happier with the results.
+                                </p>
+                                <div class="testimonial-author">David Johnson</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Working with this team has been an absolute pleasure. They delivered results that exceeded our expectations and maintained excellent communication throughout the entire process.
+                                </p>
+                                <div class="testimonial-author">Emily Thompson</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Exceptional service and attention to detail. The team went above and beyond to ensure our project was a success. Their expertise and professionalism truly set them apart from the competition.
+                                </p>
+                                <div class="testimonial-author">Robert Martinez</div>
+                            </div>
+                        </div>
+        
+                        <!-- Cloned cards for infinite loop (start) -->
+                        <div class="testimonial-card clone">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies nam dui mattis placerat fusce gravida diam fermentum. Sit sodales adipiscing rhoncus cras quam vel nam. Curabitur pellentesque vitae amet, massa venenatis risque, netus nunc. Sapien vitae dolor quis quam neque facilisi sagittis, malesuada fermentum.
+                                </p>
+                                <div class="testimonial-author">Joseph Harllow</div>
+                            </div>
+                        </div>
+        
+                        <div class="testimonial-card clone">
+                            <div class="card-content">
+                                <p class="testimonial-text">
+                                    Outstanding quality and dedication. The results speak for themselves - our business has grown significantly since partnering with them. Highly recommend their services to anyone looking for excellence.
+                                </p>
+                                <div class="testimonial-author">Anna Doe</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="slider-controls">
+                    <button class="slider-btn" id="prevBtn" aria-label="Previous testimonial">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.68779 15H24.6875" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                            <path d="M11.7627 22.075C11.7627 18.4379 8.55945 15 4.68757 15" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                            <path d="M11.7627 7.92578C11.7627 11.563 8.55945 15.0008 4.68757 15.0008" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                        </svg>
+                    </button>
+                    <button class="slider-btn" id="nextBtn" aria-label="Next testimonial">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.3122 15H5.3125" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                            <path d="M18.2373 22.075C18.2373 18.4379 21.4406 15 25.3124 15" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                            <path d="M18.2373 7.92578C18.2373 11.563 21.4406 15.0008 25.3124 15.0008" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
         <section class="blog-section">
             <div class="main-container">
                 <div class="blog-wrapper">
@@ -261,7 +397,13 @@
                     <div class="blog-btn-wrapper">
                         <a href="#" class="blogs-btn">
                             View All Blogs
-                            <img src="./Icons/right-arrow-black.svg" alt="" class="rigth-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="right-arrow">
+                            <path d="M20.2498 12H4.25" />
+                            <path d="M14.5898 17.66C14.5898 14.7503 17.1524 12 20.2499 12" />
+                            <path d="M14.5898 6.33984C14.5898 9.24959 17.1524 11.9999 20.2499 11.9999" />
+                            </svg>
+
                         </a>
                     </div>
                 </div>
@@ -319,5 +461,110 @@
             </div>
         </footer>
     </div>
+    <script>
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const allCards = document.querySelectorAll('.testimonial-card');
+        const cards = document.querySelectorAll('.testimonial-card:not(.clone)');
+        
+        const totalCards = cards.length; // 7 original cards
+        let currentIndex = 0;
+        let isTransitioning = false;
+
+        // Start at the first real card (after clones)
+        const startOffset = 2; // Number of cloned cards at the beginning
+        currentIndex = 0;
+        
+        function updateSlider(smooth = true) {
+            if (!smooth) {
+                sliderWrapper.style.transition = 'none';
+            } else {
+                sliderWrapper.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            }
+            
+            const offset = (currentIndex + startOffset) * (630); // card width (600) + padding (30)
+            sliderWrapper.style.transform = `translateX(-${offset}px)`;
+            
+            // Update active class
+            allCards.forEach((card, index) => {
+                card.classList.remove('active');
+                if (index === currentIndex + startOffset) {
+                    card.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            currentIndex++;
+            updateSlider(true);
+            
+            // Check if we've reached the end
+            if (currentIndex >= totalCards) {
+                setTimeout(() => {
+                    currentIndex = 0;
+                    updateSlider(false);
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 50);
+                }, 600);
+            } else {
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 600);
+            }
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            currentIndex--;
+            updateSlider(true);
+            
+            // Check if we've reached the beginning
+            if (currentIndex < 0) {
+                setTimeout(() => {
+                    currentIndex = totalCards - 1;
+                    updateSlider(false);
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 50);
+                }, 600);
+            } else {
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 600);
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Initialize position
+        updateSlider(false);
+
+        // Auto-play functionality
+        let autoplayInterval = setInterval(nextSlide, 5000);
+
+        // Pause autoplay on hover
+        const section = document.querySelector('.testimonial-section');
+        section.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+
+        section.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+    </script>
 </body>
 </html>

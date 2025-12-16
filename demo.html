@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(90deg, #001623 0%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        .testimonial-section {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            text-align: center;
+            color: #6B7280;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #FFFFFF;
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .slider-container::before,
+        .slider-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 300px;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .slider-container::before {
+            left: 0;
+            background: linear-gradient(90deg, 
+                rgba(0, 22, 35, 1) 0%, 
+                rgba(0, 22, 35, 0.95) 20%,
+                rgba(0, 22, 35, 0.7) 50%,
+                rgba(0, 22, 35, 0) 100%);
+        }
+
+        .slider-container::after {
+            right: 0;
+            background: linear-gradient(270deg, 
+                rgba(0, 0, 0, 1) 0%, 
+                rgba(0, 0, 0, 0.95) 20%,
+                rgba(0, 0, 0, 0.7) 50%,
+                rgba(0, 0, 0, 0) 100%);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 calc((100vw - 800px) / 2);
+        }
+
+        .testimonial-card {
+            min-width: 800px;
+            max-width: 800px;
+            flex-shrink: 0;
+            padding: 0 15px;
+            opacity: 0.3;
+            transform: scale(0.85);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .card-content {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+            width: 100%;
+        }
+
+        .testimonial-text {
+            color: #D1D5DB;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-author {
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .slider-btn {
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgba(156, 156, 156, 0.3);
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+
+        .slider-btn:hover {
+            border-color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.05);
+            transform: scale(1.05);
+        }
+
+        .slider-btn:hover svg path {
+            stroke: #FFFFFF;
+        }
+
+        .slider-btn:active {
+            transform: scale(0.95);
+        }
+
+        .slider-btn svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        @media (max-width: 1024px) {
+            .slider-wrapper {
+                padding: 0 calc((100vw - 600px) / 2);
+            }
+
+            .testimonial-card {
+                min-width: 600px;
+                max-width: 600px;
+            }
+
+            .slider-container::before,
+            .slider-container::after {
+                width: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider-wrapper {
+                padding: 0 20px;
+            }
+
+            .testimonial-card {
+                min-width: calc(100vw - 40px);
+                max-width: calc(100vw - 40px);
+            }
+
+            .card-content {
+                padding: 30px;
+            }
+
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 40px;
+            }
+
+            .slider-controls {
+                margin-top: 40px;
+            }
+
+            .slider-btn {
+                width: 45px;
+                height: 45px;
+            }
+
+            .slider-container::before,
+            .slider-container::after {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="testimonial-section">
+        <div class="section-label">TESTIMONIALS</div>
+        <h2 class="section-title">VOICES OF TRUST: CLIENT STORIES, TESTIMONIALS THAT ILLUMINATE OUR SHARED SUCCESS.</h2>
+        
+        <div class="slider-container">
+            <div class="slider-wrapper" id="sliderWrapper">
+                <!-- Cloned cards for infinite loop (end) -->
+                <div class="testimonial-card clone">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Exceptional service and attention to detail. The team went above and beyond to ensure our project was a success. Their expertise and professionalism truly set them apart from the competition.
+                        </p>
+                        <div class="testimonial-author">Robert Martinez</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card clone">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Working with this team has been an absolute pleasure. They delivered results that exceeded our expectations and maintained excellent communication throughout the entire process.
+                        </p>
+                        <div class="testimonial-author">Emily Thompson</div>
+                    </div>
+                </div>
+
+                <!-- Original cards -->
+                <div class="testimonial-card active">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies nam dui mattis placerat fusce gravida diam fermentum. Sit sodales adipiscing rhoncus cras quam vel nam. Curabitur pellentesque vitae amet, massa venenatis risque, netus nunc. Sapien vitae dolor quis quam neque facilisi sagittis, malesuada fermentum.
+                        </p>
+                        <div class="testimonial-author">Joseph Harllow</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Outstanding quality and dedication. The results speak for themselves - our business has grown significantly since partnering with them. Highly recommend their services to anyone looking for excellence.
+                        </p>
+                        <div class="testimonial-author">Anna Doe</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            A truly transformative experience. Their innovative approach and commitment to quality helped us achieve goals we didn't think were possible. The team's expertise is unmatched.
+                        </p>
+                        <div class="testimonial-author">Michael Chen</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Professional, reliable, and results-driven. Every interaction with the team has been positive and productive. They understand our needs and consistently deliver outstanding outcomes.
+                        </p>
+                        <div class="testimonial-author">Sarah Williams</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Incredible attention to detail and customer service. They took the time to understand our vision and brought it to life perfectly. We couldn't be happier with the results.
+                        </p>
+                        <div class="testimonial-author">David Johnson</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Working with this team has been an absolute pleasure. They delivered results that exceeded our expectations and maintained excellent communication throughout the entire process.
+                        </p>
+                        <div class="testimonial-author">Emily Thompson</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Exceptional service and attention to detail. The team went above and beyond to ensure our project was a success. Their expertise and professionalism truly set them apart from the competition.
+                        </p>
+                        <div class="testimonial-author">Robert Martinez</div>
+                    </div>
+                </div>
+
+                <!-- Cloned cards for infinite loop (start) -->
+                <div class="testimonial-card clone">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ultricies nam dui mattis placerat fusce gravida diam fermentum. Sit sodales adipiscing rhoncus cras quam vel nam. Curabitur pellentesque vitae amet, massa venenatis risque, netus nunc. Sapien vitae dolor quis quam neque facilisi sagittis, malesuada fermentum.
+                        </p>
+                        <div class="testimonial-author">Joseph Harllow</div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card clone">
+                    <div class="card-content">
+                        <p class="testimonial-text">
+                            Outstanding quality and dedication. The results speak for themselves - our business has grown significantly since partnering with them. Highly recommend their services to anyone looking for excellence.
+                        </p>
+                        <div class="testimonial-author">Anna Doe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn" aria-label="Previous testimonial">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.68779 15H24.6875" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                    <path d="M11.7627 22.075C11.7627 18.4379 8.55945 15 4.68757 15" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                    <path d="M11.7627 7.92578C11.7627 11.563 8.55945 15.0008 4.68757 15.0008" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                </svg>
+            </button>
+            <button class="slider-btn" id="nextBtn" aria-label="Next testimonial">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25.3122 15H5.3125" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                    <path d="M18.2373 22.075C18.2373 18.4379 21.4406 15 25.3124 15" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                    <path d="M18.2373 7.92578C18.2373 11.563 21.4406 15.0008 25.3124 15.0008" stroke="#9C9C9C" stroke-width="1.5" stroke-linecap="square"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const allCards = document.querySelectorAll('.testimonial-card');
+        const cards = document.querySelectorAll('.testimonial-card:not(.clone)');
+        
+        const totalCards = cards.length; // 7 original cards
+        let currentIndex = 0;
+        let isTransitioning = false;
+
+        // Start at the first real card (after clones)
+        const startOffset = 2; // Number of cloned cards at the beginning
+        currentIndex = 0;
+        
+        function updateSlider(smooth = true) {
+            if (!smooth) {
+                sliderWrapper.style.transition = 'none';
+            } else {
+                sliderWrapper.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            }
+            
+            const offset = (currentIndex + startOffset) * (830); // card width (800) + padding (30)
+            sliderWrapper.style.transform = `translateX(-${offset}px)`;
+            
+            // Update active class
+            allCards.forEach((card, index) => {
+                card.classList.remove('active');
+                if (index === currentIndex + startOffset) {
+                    card.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            currentIndex++;
+            updateSlider(true);
+            
+            // Check if we've reached the end
+            if (currentIndex >= totalCards) {
+                setTimeout(() => {
+                    currentIndex = 0;
+                    updateSlider(false);
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 50);
+                }, 600);
+            } else {
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 600);
+            }
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            
+            currentIndex--;
+            updateSlider(true);
+            
+            // Check if we've reached the beginning
+            if (currentIndex < 0) {
+                setTimeout(() => {
+                    currentIndex = totalCards - 1;
+                    updateSlider(false);
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, 50);
+                }, 600);
+            } else {
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 600);
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Initialize position
+        updateSlider(false);
+
+        // Auto-play functionality
+        let autoplayInterval = setInterval(nextSlide, 5000);
+
+        // Pause autoplay on hover
+        const section = document.querySelector('.testimonial-section');
+        section.addEventListener('mouseenter', () => {
+            clearInterval(autoplayInterval);
+        });
+
+        section.addEventListener('mouseleave', () => {
+            autoplayInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        });
+    </script>
+</body>
+</html>

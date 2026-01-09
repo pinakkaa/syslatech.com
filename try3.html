@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'CircularStd', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            width: 120vw;
+            height: 90vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding: 105px 245px 0 118px;
+            position: relative;
+            background: linear-gradient(90deg, #0798ff0d 0%, #ffffff 100%);
+            overflow: hidden;
+        }
+
+        .bg-gradent {
+            position: absolute;
+            left: -150px;
+            top: 0;
+            width: 520px;
+            height: 500px;
+            background: radial-gradient(ellipse at center, rgba(7, 153, 255, 0.45) 0%, rgba(7, 153, 255, 0.25) 40%, rgba(7, 153, 255, 0.1) 65%, rgba(7, 153, 255, 0) 75%);
+            filter: blur(120px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bg-gradent-right {
+            position: absolute;
+            right: 30%;
+            top: -50px;
+            width: 520px;
+            height: 500px;
+            background: radial-gradient(ellipse at center, rgba(7, 153, 255, 0.45) 0%, rgba(7, 153, 255, 0.25) 40%, rgba(7, 153, 255, 0.1) 65%, rgba(7, 153, 255, 0) 75%);
+            filter: blur(220px);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-section-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 450px;
+            width: 100%;
+            margin-left: -4rem;
+            background-color: rgba(255, 255, 255, 0.158);
+            border-radius: 44px;
+            backdrop-filter: blur(50px);
+            border: 1px solid #ffffffe9;
+            position: relative;
+            z-index: 9;
+            padding: 0 3rem;
+        }
+
+        /* Slider Specific Styles */
+        .hero-slider-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-slide-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            pointer-events: none;
+        }
+
+        .hero-slide-item.active-hero-slide {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .hero-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+            transform: translateX(-30px);
+            opacity: 0;
+            transition: all 0.8s ease-in-out 0.2s;
+        }
+
+        .hero-slide-item.active-hero-slide .hero-content-wrapper {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .hero-logo {
+            height: 53px;
+            width: 187px;
+            object-fit: contain;
+        }
+
+        .hero-title {
+            text-transform: uppercase;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 44px;
+            text-align: left;
+            color: #000;
+            font-family: "CircularStd", sans-serif !important;
+        }
+
+        .hero-title span {
+            text-transform: uppercase;
+            font-size: 35px;
+            font-weight: 400;
+            line-height: 44px;
+            text-align: left;
+            color: #000;
+            font-family: "CircularStd", sans-serif !important;
+        }
+
+        .hero-subtitle {
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: auto;
+            text-align: left;
+            color: #000;
+        }
+
+        .hero-slide-image {
+            transform: translateX(30px);
+            opacity: 0;
+            transition: all 0.8s ease-in-out 0.3s;
+        }
+
+        .hero-slide-item.active-hero-slide .hero-slide-image {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* Slider Controls */
+        .hero-slider-controls {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .hero-slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(7, 153, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .hero-slider-dot:hover {
+            background-color: rgba(7, 153, 255, 0.6);
+        }
+
+        .hero-slider-dot.active-dot {
+            background-color: #0799ff;
+            border-color: #ffffff;
+            transform: scale(1.2);
+        }
+
+        /* Navigation Arrows */
+        .hero-slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .hero-slider-nav:hover {
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .hero-slider-nav.prev-hero-slide {
+            left: -50px;
+        }
+
+        .hero-slider-nav.next-hero-slide {
+            right: -50px;
+        }
+
+        .hero-slider-nav::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #0799ff;
+            border-right: 2px solid #0799ff;
+            transition: border-color 0.3s ease;
+        }
+
+        .hero-slider-nav.prev-hero-slide::after {
+            transform: rotate(-135deg);
+            margin-left: 3px;
+        }
+
+        .hero-slider-nav.next-hero-slide::after {
+            transform: rotate(45deg);
+            margin-right: 3px;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-section {
+                padding: 80px 100px 0 80px;
+            }
+            
+            .hero-section-wrapper {
+                margin-left: -2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                width: 100vw;
+                padding: 20px 15px;
+                height: 60vh;
+                background: linear-gradient(180deg, #0798ff0d 0%, #ffffff 100%);
+                display: flex;
+                align-items: center;
+            }
+
+            .bg-gradent {
+                left: -200px;
+                top: -100px;
+                width: 400px;
+                height: 400px;
+                filter: blur(100px);
+            }
+
+            .bg-gradent-right {
+                right: -200px;
+                top: 50%;
+                width: 400px;
+                height: 400px;
+                filter: blur(180px);
+            }
+
+            .main-container {
+                padding: 0 15px;
+                width: 100%;
+            }
+
+            .hero-section-wrapper {
+                margin-left: 0;
+                padding: 1.5rem 1rem;
+                height: 100%;
+                max-height: 85vh;
+                border-radius: 24px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .hero-slider-container {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-slide-item {
+                position: absolute;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                padding: 0;
+                height: 100%;
+            }
+
+            .hero-content-wrapper {
+                align-items: center;
+                text-align: center;
+                gap: 12px;
+                width: 100%;
+                flex-shrink: 0;
+            }
+
+            .hero-logo {
+                height: 35px;
+                width: auto;
+                max-width: 140px;
+            }
+
+            .hero-title {
+                font-size: 18px;
+                line-height: 26px;
+                text-align: center;
+            }
+
+            .hero-title br {
+                display: none;
+            }
+
+            .hero-title span {
+                font-size: 20px;
+                line-height: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 13px;
+                text-align: center;
+            }
+
+            .hero-slide-image {
+                width: 100%;
+                max-width: 280px;
+                height: auto;
+                margin: 0 auto;
+                flex-shrink: 1;
+            }
+
+            /* Mobile Navigation Arrows */
+            .hero-slider-nav {
+                width: 35px;
+                height: 35px;
+                background-color: rgba(255, 255, 255, 0.9);
+                border: 1px solid rgba(7, 153, 255, 0.3);
+            }
+
+            .hero-slider-nav.prev-hero-slide {
+                left: 10px;
+            }
+
+            .hero-slider-nav.next-hero-slide {
+                right: 10px;
+            }
+
+            .hero-slider-nav::after {
+                width: 8px;
+                height: 8px;
+            }
+
+            /* Mobile Slider Controls */
+            .hero-slider-controls {
+                bottom: 15px;
+                gap: 8px;
+            }
+
+            .hero-slider-dot {
+                width: 8px;
+                height: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            html, body{
+                width: 100vw;
+                overflow-x: hidden;
+            }
+            .hero-section {
+                padding: 15px 10px;
+            }
+
+            .hero-section-wrapper {
+                padding: 1.2rem 0.8rem;
+                max-height: 90vh;
+                border-radius: 20px;
+            }
+
+            .hero-logo {
+                height: 30px;
+                max-width: 120px;
+            }
+
+            .hero-title {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .hero-title span {
+                font-size: 18px;
+                line-height: 26px;
+            }
+
+            .hero-subtitle {
+                font-size: 12px;
+            }
+
+            .hero-slide-image {
+                max-width: 240px;
+            }
+
+            .hero-slider-nav {
+                width: 30px;
+                height: 30px;
+            }
+
+            .hero-slider-nav.prev-hero-slide {
+                left: 8px;
+            }
+
+            .hero-slider-nav.next-hero-slide {
+                right: 8px;
+            }
+
+            .hero-slider-controls {
+                bottom: -10rem;
+                gap: 6px;
+            }
+            .hero-section-wrapper{
+                background-color: transparent;
+                border: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="main-container">
+            <div class="hero-section-wrapper">
+                <div class="hero-slider-container">
+                    <!-- Slide 1 -->
+                    <div class="hero-slide-item active-hero-slide">
+                        <div class="hero-content-wrapper">
+                            <img src="./Images/Logo.png" alt="Logo 1" class="hero-logo">
+                            <h1 class="hero-title">YOUR TRUSTED PARTNER IN <br><span>INTELLIGENT AUTOMATION</span></h1>
+                            <p class="hero-subtitle">Powered by AI, perfected for performance</p>
+                        </div>
+                        <img src="./Images/Hero-image-1.png" alt="Hero Image 1" class="hero-slide-image" width="530" height="310">
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="hero-slide-item">
+                        <div class="hero-content-wrapper">
+                            <img src="./Images/Logo.png" alt="Logo 2" class="hero-logo">
+                            <h1 class="hero-title">TRANSFORMING BUSINESS WITH <br><span>SMART SOLUTIONS</span></h1>
+                            <p class="hero-subtitle">Innovation meets excellence</p>
+                        </div>
+                        <img src="./Images/Hero-image-2.png" alt="Hero Image 2" class="hero-slide-image" width="530" height="310">
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="hero-slide-item">
+                        <div class="hero-content-wrapper">
+                            <img src="./Images/Logo.png" alt="Logo 3" class="hero-logo">
+                            <h1 class="hero-title">ACCELERATE YOUR DIGITAL <br><span>TRANSFORMATION JOURNEY</span></h1>
+                            <p class="hero-subtitle">Technology that drives growth</p>
+                        </div>
+                        <img src="./Images/Hero-image-3.png" alt="Hero Image 3" class="hero-slide-image" width="530" height="310">
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="hero-slide-item">
+                        <div class="hero-content-wrapper">
+                            <img src="./Images/Logo.png" alt="Logo 4" class="hero-logo">
+                            <h1 class="hero-title">EMPOWERING ENTERPRISES WITH <br><span>CUTTING-EDGE TECHNOLOGY</span></h1>
+                            <p class="hero-subtitle">Building tomorrow's solutions today</p>
+                        </div>
+                        <img src="./Images/Hero-image-4.png" alt="Hero Image 4" class="hero-slide-image" width="530" height="310">
+                    </div>
+
+                    <!-- Slide 5 -->
+                    <div class="hero-slide-item">
+                        <div class="hero-content-wrapper">
+                            <img src="./Images/Logo.png" alt="Logo 5" class="hero-logo">
+                            <h1 class="hero-title">SEAMLESS INTEGRATION FOR <br><span>MAXIMUM EFFICIENCY</span></h1>
+                            <p class="hero-subtitle">Streamline your operations</p>
+                        </div>
+                        <img src="./Images/Hero-image-5.png" alt="Hero Image 5" class="hero-slide-image" width="530" height="310">
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div class="hero-slide-item">
+                        <div class="hero-content-wrapper">
+                            <img src="./Images/Logo.png" alt="Logo 6" class="hero-logo">
+                            <h1 class="hero-title">LEADING THE WAY IN <br><span>INTELLIGENT SYSTEMS</span></h1>
+                            <p class="hero-subtitle">Where innovation never stops</p>
+                        </div>
+                        <img src="./Images/Hero-image-6.png" alt="Hero Image 6" class="hero-slide-image" width="530" height="310">
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <div class="hero-slider-nav prev-hero-slide"></div>
+                <div class="hero-slider-nav next-hero-slide"></div>
+
+                <!-- Slider Dots -->
+                <div class="hero-slider-controls">
+                    <span class="hero-slider-dot active-dot" data-hero-slide="0"></span>
+                    <span class="hero-slider-dot" data-hero-slide="1"></span>
+                    <span class="hero-slider-dot" data-hero-slide="2"></span>
+                    <span class="hero-slider-dot" data-hero-slide="3"></span>
+                    <span class="hero-slider-dot" data-hero-slide="4"></span>
+                    <span class="hero-slider-dot" data-hero-slide="5"></span>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gradent"></div>
+        <div class="bg-gradent-right"></div>
+    </section>
+
+    <script>
+        // Hero Slider Functionality - Unique naming to avoid conflicts
+        (function() {
+            let currentHeroSlideIndex = 0;
+            const heroSlideItems = document.querySelectorAll('.hero-slide-item');
+            const heroSlideDots = document.querySelectorAll('.hero-slider-dot');
+            const totalHeroSlides = heroSlideItems.length;
+            let heroSliderInterval;
+
+            // Function to show specific slide
+            function displayHeroSlide(slideIndex) {
+                // Remove active class from all slides and dots
+                heroSlideItems.forEach(item => item.classList.remove('active-hero-slide'));
+                heroSlideDots.forEach(dot => dot.classList.remove('active-dot'));
+
+                // Add active class to current slide and dot
+                heroSlideItems[slideIndex].classList.add('active-hero-slide');
+                heroSlideDots[slideIndex].classList.add('active-dot');
+
+                currentHeroSlideIndex = slideIndex;
+            }
+
+            // Function to go to next slide
+            function advanceToNextHeroSlide() {
+                let nextIndex = (currentHeroSlideIndex + 1) % totalHeroSlides;
+                displayHeroSlide(nextIndex);
+            }
+
+            // Function to go to previous slide
+            function returnToPreviousHeroSlide() {
+                let prevIndex = (currentHeroSlideIndex - 1 + totalHeroSlides) % totalHeroSlides;
+                displayHeroSlide(prevIndex);
+            }
+
+            // Auto-play functionality
+            function initializeHeroAutoplay() {
+                heroSliderInterval = setInterval(advanceToNextHeroSlide, 5000);
+            }
+
+            // Stop auto-play
+            function haltHeroAutoplay() {
+                clearInterval(heroSliderInterval);
+            }
+
+            // Restart auto-play
+            function resumeHeroAutoplay() {
+                haltHeroAutoplay();
+                initializeHeroAutoplay();
+            }
+
+            // Event listeners for navigation arrows
+            document.querySelector('.next-hero-slide').addEventListener('click', function() {
+                advanceToNextHeroSlide();
+                resumeHeroAutoplay();
+            });
+
+            document.querySelector('.prev-hero-slide').addEventListener('click', function() {
+                returnToPreviousHeroSlide();
+                resumeHeroAutoplay();
+            });
+
+            // Event listeners for dots
+            heroSlideDots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    displayHeroSlide(index);
+                    resumeHeroAutoplay();
+                });
+            });
+
+            // Pause on hover (disabled on mobile for better UX)
+            if (window.innerWidth > 768) {
+                document.querySelector('.hero-section-wrapper').addEventListener('mouseenter', haltHeroAutoplay);
+                document.querySelector('.hero-section-wrapper').addEventListener('mouseleave', initializeHeroAutoplay);
+            }
+
+            // Initialize slider
+            initializeHeroAutoplay();
+        })();
+    </script>
+</body>
+</html>

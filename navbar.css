@@ -84,10 +84,25 @@ body {
 
 /* Navbar  */
 
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.main-container-nav {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar */
 .navbar {
     width: 100%;
     background-color: #ffffff;
+    position: relative;
+    z-index: 1000;
 }
+
 .navbar-wrapper {
     width: 100%;
     display: flex;
@@ -95,26 +110,57 @@ body {
     align-items: center;
     padding: 24px 0;
 }
+
 .nav-image-wrapper {
     height: 68px;
     width: 240px;
 }
+
 .nav-image {
     height: 100%;
     width: 100%;
 }
+
 .nav-links-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
 }
+
+.nav-item {
+    position: relative;
+}
+
 .nav-links {
     text-decoration: none;
     text-transform: uppercase;
     font-family: "Manrope", sans-serif;
     color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
 }
+
+.nav-links:hover {
+    color: #0066cc;
+}
+
+/* Replaced dropdown-arrow styling with Material Icon */
+.dropdown-arrow {
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .dropdown-arrow,
+.nav-item.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
 .nav-btn-wrapper {
     position: relative;
     width: 160px;
@@ -134,10 +180,10 @@ body {
     justify-content: center;
     transition: color 0.45s ease;
     z-index: 1;
-  }
-  
-  /* Wave layer */
-  .nav-btn-wrapper::before {
+    background-color: transparent;
+}
+
+.nav-btn-wrapper::before {
     content: "";
     position: absolute;
     bottom: -120%;
@@ -149,16 +195,797 @@ body {
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
                 bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1;
-  }
-  
-  /* Hover effect */
-  .nav-btn-wrapper:hover::before {
+}
+
+.nav-btn-wrapper:hover::before {
     bottom: 0;
-  }
-  
-  .nav-btn-wrapper:hover {
+}
+
+.nav-btn-wrapper:hover {
     color: #fff;
-  }
+}
+
+/* Dropdown Styles - Full Width */
+.dropdown-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    /* background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    top: 6rem;
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.nav-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.dropdown-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.dropdown-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dropdown-grid.cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Services Dropdown - Blue theme for main categories */
+.services-dropdown .dropdown-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.services-dropdown .dropdown-item {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.services-dropdown .dropdown-item:hover {
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.services-dropdown .category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 24px;
+    background-color: #f0f5ff;
+    border: 2px solid #cce0ff;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.services-dropdown .category-header:hover {
+    background-color: #e6ecff;
+    border-color: #99b3ff;
+}
+
+.services-dropdown .category-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #4d94ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.services-dropdown .category-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.services-dropdown .category-arrow {
+    margin-left: auto;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.services-dropdown .sub-category.active .category-arrow {
+    transform: rotate(180deg);
+}
+
+/* Sub-items for QA categories */
+.services-dropdown .sub-items {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.services-dropdown .sub-category.active .sub-items {
+    display: grid;
+}
+
+.services-dropdown .sub-item {
+    background-color: #fff5f5;
+    border: 2px solid #ffcccc;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.services-dropdown .sub-item:hover {
+    background-color: #ffe6e6;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.services-dropdown .sub-item-icon {
+    width: 52px;
+    height: 52px;
+    background-color: #ff9999;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.services-dropdown .sub-item-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.services-dropdown .sub-item-content p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* AI items display (9 items in 3 columns - default state) */
+.services-dropdown .ai-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.services-dropdown .ai-item {
+    background-color: #f0f5ff;
+    border: 2px solid #cce0ff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.services-dropdown .ai-item:hover {
+    background-color: #e6ecff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.services-dropdown .ai-item-icon {
+    width: 52px;
+    height: 52px;
+    background-color: #4d94ff;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.services-dropdown .ai-item-content h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.services-dropdown .ai-item-content p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Solutions Dropdown - Red Boxes - 7 items */
+.solutions-dropdown .dropdown-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.solutions-dropdown .dropdown-item {
+    /* background-color: #fff5f5; */
+    /* border: 2px solid #ffcccc; */
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.solutions-dropdown .dropdown-item:hover {
+    /* background-color: #ffe6e6; */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.solutions-dropdown .dropdown-icon {
+    width: 52px;
+    height: 52px;
+    /* background-color: #ff9999; */
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.solutions-dropdown .dropdown-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.solutions-dropdown .dropdown-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Why Partner Dropdown - Yellow Boxes */
+.partner-dropdown .dropdown-item {
+    /* background-color: #fffbf0; */
+    /* border: 2px solid #ffe8a1; */
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.partner-dropdown .dropdown-item:hover {
+    /* background-color: #fff8e1; */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.partner-dropdown .dropdown-icon {
+    width: 52px;
+    height: 52px;
+    /* background-color: #ffd54f; */
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.partner-dropdown .dropdown-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.partner-dropdown .dropdown-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Tools & Tech Dropdown - Green Boxes */
+.tools-dropdown .dropdown-item {
+    /* background-color: #f0fff4; */
+    /* border: 2px solid #b2f5c8; */
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tools-dropdown .dropdown-item:hover {
+    /* background-color: #e6ffe6; */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tools-dropdown .dropdown-icon {
+    width: 52px;
+    height: 52px;
+    /* background-color: #69f0ae; */
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.tools-dropdown .dropdown-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.tools-dropdown .dropdown-content p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* New Services Dropdown Styles with Breadcrumb Navigation */
+.services-dropdown {
+    /* top: calc(100% + 12px); */
+}
+
+.services-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 0 24px 0;
+    /* border-bottom: 1px solid #e0e0e0; */
+    /* margin-bottom: 24px; */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.breadcrumb-item {
+    cursor: pointer;
+    color: #666;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.breadcrumb-item:hover {
+    color: #0066cc;
+    background-color: #f0f5ff;
+}
+
+.breadcrumb-item.active {
+    color: #0066cc;
+    font-weight: 700;
+}
+
+.breadcrumb-separator {
+    color: #999;
+    font-weight: 400;
+}
+
+.services-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.services-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* AI Services Grid (3 columns) */
+.services-grid.ai-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* QA Services Structure */
+.qa-subcategories {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.qa-category {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.qa-category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.qa-category-header:hover {
+    background-color: #f0f0f0;
+}
+
+.qa-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.qa-toggle {
+    font-size: 20px;
+    color: #666;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.qa-category.expanded .qa-toggle {
+    transform: rotate(180deg);
+}
+
+.qa-items-grid {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.qa-category.expanded .qa-items-grid {
+    display: grid;
+}
+
+/* Service Cards (used for both AI and QA items) */
+.service-card {
+    /* background-color: #ffffff; */
+    /* border: 2px solid #e0e0e0; */
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.service-card:hover {
+    /* border-color: #0066cc; */
+    /* background-color: #f8faff; */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1);
+}
+
+.service-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.services-grid .service-icon {
+    /* background-color: #4d94ff; */
+}
+
+.qa-manual-icon {
+    /* background-color: #ff9999; */
+}
+
+.qa-automation-icon {
+    /* background-color: #66b3ff; */
+}
+
+.service-info {
+    flex: 1;
+}
+
+.service-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.service-info p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Added Styles for QA Selector */
+.qa-selector {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    /* padding: 0 0 24px 0; */
+    /* border-bottom: 1px solid #e0e0e0; */
+    margin-bottom: 24px;
+}
+
+.qa-option {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    user-select: none;
+    font-size: 0.8rem;
+}
+
+.qa-option:hover {
+    color: #0066cc;
+    /* background-color: #f0f5ff; */
+}
+
+.qa-option.active {
+    /* color: #0066cc; */
+    font-weight: 600;
+    /* background-color: #f0f5ff; */
+    font-size: 0.8rem;
+}
+
+/* New styles for QA content visibility */
+.qa-manual-content,
+.qa-automation-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.qa-manual-content.active,
+.qa-automation-content.active {
+    display: block;
+}
+
+/* Adjust QA category grid to not have grid display */
+.qa-subcategories {
+    gap: 0; /* Removed gap for QA subcategories */
+}
+
+.qa-category {
+    border: none; /* Removed border for QA categories */
+}
+
+.qa-category-header {
+    background-color: transparent; /* Removed background for QA headers */
+    padding: 0 0 20px 0; /* Adjust padding */
+}
+
+.qa-category-header:hover {
+    background-color: transparent; /* Removed hover effect */
+}
+
+.qa-label {
+    font-size: 18px; /* Increased font size for QA labels */
+    font-weight: 700;
+    color: #000;
+}
+
+.qa-toggle {
+    display: none; /* Hidden QA toggle */
+}
+
+.qa-items-grid {
+    display: grid !important; /* Force QA items grid to be visible */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 20px 0 0 0; /* Adjust padding */
+}
+
+/* QA Services Grid (3 columns, full-width) */
+.services-grid.qa-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+/* Add mobile hamburger menu styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 8px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow-y: auto;
+    z-index: 1000;
+    padding-top: 100px;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu-items {
+    padding: 20px 24px;
+}
+
+.mobile-menu-item {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+}
+
+.mobile-menu-item-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.mobile-menu-item-label:hover {
+    color: #0066cc;
+}
+
+.mobile-menu-chevron {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-menu-item.active .mobile-menu-chevron {
+    transform: rotate(180deg);
+}
+
+.mobile-menu-submenu {
+    display: none;
+    padding-left: 24px;
+    padding-top: 12px;
+}
+
+.mobile-menu-item.active .mobile-menu-submenu {
+    display: block;
+}
+
+.mobile-submenu-item {
+    padding: 12px 0;
+    color: #666;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-submenu-item:hover {
+    color: #0066cc;
+}
+
+.mobile-submenu-item.has-submenu {
+    font-weight: 600;
+    color: #000;
+}
+
+.mobile-submenu-chevron {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-submenu-item.active .mobile-submenu-chevron {
+    transform: rotate(180deg);
+}
+
+.mobile-submenu-nested {
+    display: none;
+    padding-left: 24px;
+    padding-top: 12px;
+}
+
+.mobile-submenu-item.active .mobile-submenu-nested {
+    display: block;
+}
+
+.mobile-nested-item {
+    padding: 10px 0;
+    color: #999;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.mobile-nested-item:hover {
+    color: #0066cc;
+}
+
+/* Hide nav-links on mobile, show hamburger */
+@media (max-width: 768px) {
+    .nav-links-wrapper {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-btn-wrapper {
+        display: none;
+    }
+}
+
+/* Desktop view unchanged */
+@media (min-width: 769px) {
+    .hamburger-menu,
+    .mobile-menu {
+        display: none !important;
+    }
+}
+.mobile-submenu-item.active + .mobile-submenu-nested {
+    display: block;
+}
+
+.nav-images-logo{
+    height: 50px;
+    width: 60px;
+}
   
 
 /* Footer  */

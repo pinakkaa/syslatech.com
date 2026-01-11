@@ -1367,6 +1367,143 @@
     }
 }
 
-.solutions-section{
-    
+.solutions-section {
+    background: linear-gradient(to right, #2874A6, #48C9B0);
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.solutions-section::before {
+    content: 'SOLUTIONS';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    font-size: 10rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.09);
+    letter-spacing: 10px;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+.solutions-title {
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    font-family: "CircularStd", sans-serif !important;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1000px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.solution-card {
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* backdrop-filter: blur(10px); */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-height: 170px;
+    background-color: transparent;
+    width: 317px;
+    height: 257px;
+    gap: 1rem;
+}
+
+
+.solution-icon {
+    width: 64px;
+    height: 64px;
+    /* margin-bottom: 20px; */
+}
+
+.solution-name {
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+    .solutions-section::before {
+        font-size: 8rem;
+    }
+
+    .solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .solutions-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+    }
+
+    .solution-card {
+        padding: 35px 20px;
+        min-height: 160px;
+    }
+}
+
+@media (max-width: 640px) {
+    .solutions-section {
+        padding: 60px 15px;
+    }
+
+    .solutions-section::before {
+        font-size: 5rem;
+        letter-spacing: 5px;
+    }
+
+    .solutions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 400px;
+    }
+
+    .solutions-title {
+        font-size: 1.75rem;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    .solution-card {
+        padding: 30px 20px;
+        min-height: 150px;
+    }
+
+    .solution-icon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 18px;
+    }
+
+    .solution-name {
+        font-size: 1.05rem;
+    }
 }

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; */
+            /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-header h1 {
+            font-size: 35px;
+            line-height: 44px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-family: "CircularStd", sans-serif !important;
+            background: linear-gradient(to bottom, #1A212A, #2D5689);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-content {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        .contact-form-section{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-form-section h2 {
+            font-size: 30px;
+            line-height: 48px;
+            font-weight: 500;
+            color: #1A212A;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .contact-form-section p {
+            font-size: 14px;
+            line-height: 23px;
+            font-weight: 400;
+            color: gray;
+            font-family: "Manrope", sans-serif;
+            max-width: 340px;
+        }
+        .contactForm{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+            gap: 1.5rem ;
+        }
+        .contact-form-title-wrapper{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+            line-height: 23px;
+            font-weight: 400;
+            color: gray;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #1a212a9c;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .char-count {
+            text-align: right;
+            color: #a0aec0;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .submit-btn {
+            background: #2d3748;
+            color: white;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: #1a202c;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 2rem;
+            gap: 35px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .icon-wrapper {
+            height: 24px;
+            width: 24px;
+        }
+        .icon-wrapper img{
+            height: 24px;
+            width: 24px;
+        }
+
+
+        .info-content h3 {
+            font-size: 1.2rem;
+            line-height: 23px;
+            font-weight: 500;
+            color: #1A212A;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .info-content p {
+            font-size: 0.9rem;
+            line-height: 23px;
+            font-weight: 400;
+            color: gray;
+            font-family: "Manrope", sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+                padding: 30px;
+                gap: 40px;
+            }
+
+            .contact-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>GET IN TOUCH WITH US</h1>
+        </div>
+
+        <div class="contact-content">
+            <div class="contact-form-section">
+                <div class="contact-form-title-wrapper">
+                    <h2>Send Us A Message</h2>
+                    <p>Let's connect and explore the endless opportunities to thrive in the digital world together!</p> 
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" maxlength="180"></textarea>
+                        <div class="char-count"><span id="charCount">0</span> / 180</div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="icon-wrapper">
+                        <img src="./Images/email.svg" alt="">
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>sales@syslatech.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-wrapper">
+                        <img src="./Images/phone.svg" alt="">
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>+91 9986055536<br>+1 707-314-5939</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-wrapper">
+                        <img src="./Images/location.svg" alt="">
+                    </div>
+                    <div class="info-content">
+                        <h3>Location</h3>
+                        <p>Bangalore, Karnataka, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const messageInput = document.getElementById('message');
+        const charCount = document.getElementById('charCount');
+
+        messageInput.addEventListener('input', function() {
+            charCount.textContent = this.value.length;
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your email functionality here
+            console.log('Form submitted');
+            alert('Form submitted! Add your email functionality here.');
+        });
+    </script>
+</body>
+</html>

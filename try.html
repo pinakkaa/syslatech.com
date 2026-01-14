@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions Section</title>
+    <title>Our Testing Capabilities</title>
     <style>
         * {
             margin: 0;
@@ -12,236 +12,523 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(180deg, #001623 0%, #000000 100%);
+            min-height: 100vh;
+            color: #fff;
         }
 
-        .solutions-section {
-            background: linear-gradient(to right, #2874A6, #48C9B0);
+        .testing-section {
             padding: 80px 20px;
-            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-us-testing-section-title {
+            text-transform: uppercase;
+            font-size: 35px;
+            font-weight: 500;
+            line-height: 54px;
+            text-align: left;
+            color: #FFFFFF;
+            font-family: "CircularStd", sans-serif !important;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .image-container {
+            position: relative;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ai-orb {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .orb-glow {
+            position: absolute;
+            inset: -20%;
+            background: radial-gradient(circle, rgba(66, 153, 225, 0.3) 0%, transparent 70%);
+            filter: blur(40px);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .orb-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #1e3a5f 0%, #0a1929 100%);
+            display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
+            box-shadow: 0 0 60px rgba(66, 153, 225, 0.4);
+            overflow: hidden;
         }
 
-        .solutions-section::before {
-            content: 'SOLUTIONS';
+        .orb-image::before {
+            content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 12rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.03);
-            letter-spacing: 10px;
-            z-index: 0;
-            white-space: nowrap;
+            inset: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #4299e1, #2b6cb0, #1a365d);
+            opacity: 0.6;
+            animation: rotate 8s linear infinite;
         }
 
-        .solutions-title {
-            color: white;
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            margin-bottom: 60px;
-            text-align: center;
+        .orb-content {
             position: relative;
             z-index: 2;
-        }
-
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1000px;
-            width: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .solution-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            padding: 40px 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            min-height: 170px;
-        }
-
-        .solution-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .solution-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 20px;
-            stroke: white;
-            fill: none;
-            stroke-width: 2;
-        }
-
-        .solution-name {
-            color: white;
-            font-size: 1.15rem;
-            font-weight: 400;
             text-align: center;
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 968px) {
-            .solutions-section::before {
-                font-size: 8rem;
-            }
+        .ai-chip {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #4299e1;
+            text-shadow: 0 0 30px rgba(66, 153, 225, 0.8);
+            letter-spacing: 4px;
+        }
 
-            .solutions-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
+        .circuit-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
 
-            .solutions-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
-            }
+        .circuit-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, #4299e1, transparent);
+            height: 2px;
+            animation: circuit 3s linear infinite;
+        }
 
-            .solution-card {
-                padding: 35px 20px;
-                min-height: 160px;
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #4299e1;
+            border-radius: 50%;
+            animation: particleFloat 4s ease-in-out infinite;
+            box-shadow: 0 0 10px #4299e1;
+        }
+
+        .accordion-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .accordion-item {
+            /* background: rgba(255, 255, 255, 0.03); */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+            transition: background 0.3s ease;
+            margin-bottom: 22px;
+        }
+
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 15px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-title {
+            font-size: 26px;
+            line-height: 44px;
+            text-align: center;
+            font-weight: 500;
+            color: #ffffff;
+            font-family: "Manrope", sans-serif;
+        }
+
+        .accordion-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+
+        .accordion-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #94a3b8;
+            transition: stroke 0.3s ease;
+        }
+
+        .accordion-item:hover .accordion-icon svg {
+            stroke: #4299e1;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(90deg);
+        }
+
+        .accordion-item.active .accordion-icon svg {
+            stroke: #4299e1;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-content-inner {
+            padding: 0 32px 28px 32px;
+            color: #94a3b8;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
             }
         }
 
-        @media (max-width: 640px) {
-            .solutions-section {
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes circuit {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty));
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .ai-orb {
+                max-width: 350px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 60px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .testing-section {
                 padding: 60px 15px;
             }
 
-            .solutions-section::before {
-                font-size: 5rem;
-                letter-spacing: 5px;
-            }
-
-            .solutions-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                max-width: 400px;
-            }
-
-            .solutions-title {
+            .section-title {
                 font-size: 1.75rem;
-                letter-spacing: 2px;
-                margin-bottom: 30px;
+                letter-spacing: 1px;
+                margin-bottom: 40px;
             }
 
-            .solution-card {
-                padding: 30px 20px;
-                min-height: 150px;
+            .ai-orb {
+                max-width: 280px;
             }
 
-            .solution-icon {
-                width: 55px;
-                height: 55px;
-                margin-bottom: 18px;
+            .ai-chip {
+                font-size: 3.5rem;
             }
 
-            .solution-name {
-                font-size: 1.05rem;
+            .accordion-header {
+                padding: 22px 20px;
             }
+
+            .accordion-title {
+                font-size: 1.1rem;
+            }
+
+            .accordion-content-inner {
+                padding: 0 20px 22px 20px;
+                font-size: 0.95rem;
+            }
+
+            .content-wrapper {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .accordion-title {
+                font-size: 1rem;
+            }
+
+            .ai-orb {
+                max-width: 240px;
+            }
+
+            .ai-chip {
+                font-size: 3rem;
+            }
+        }
+        .why-us-testing-image{
+            width: 660px;
         }
     </style>
 </head>
 <body>
-    <section class="solutions-section">
-        <h1 class="solutions-title">SOLUTIONS</h1>
+    <section class="testing-section">
+        <h1 class="why-us-testing-section-title">OUR TESTING CAPABILITIES</h1>
         
-        <div class="solutions-grid">
-            <!-- Web Testing -->
-            <div class="solution-card">
-                <svg class="solution-icon" viewBox="0 0 64 64">
-                    <circle cx="32" cy="32" r="24" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="32" y1="8" x2="32" y2="56" stroke="white" stroke-width="2"/>
-                    <ellipse cx="32" cy="32" rx="12" ry="24" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="8" y1="32" x2="56" y2="32" stroke="white" stroke-width="2"/>
-                    <ellipse cx="32" cy="32" rx="24" ry="10" stroke="white" stroke-width="2" fill="none"/>
-                </svg>
-                <h3 class="solution-name">Web Testing</h3>
+        <div class="content-wrapper">
+            <div class="image-container">
+                <!-- <div class="ai-orb">
+                    <div class="orb-glow"></div>
+                    <div class="orb-image">
+                        <div class="circuit-lines" id="circuitLines"></div>
+                        <div class="particles" id="particles"></div>
+                        <div class="orb-content">
+                            <div class="ai-chip">AI</div>
+                        </div>
+                    </div>
+                </div> -->
+                <img src="./Images/why-us-our-testing-image.png" alt="" class="why-us-testing-image">
             </div>
 
-            <!-- Mobile Testing -->
-            <div class="solution-card">
-                <svg class="solution-icon" viewBox="0 0 64 64">
-                    <rect x="18" y="8" width="28" height="48" rx="3" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="18" y1="14" x2="46" y2="14" stroke="white" stroke-width="2"/>
-                    <line x1="18" y1="50" x2="46" y2="50" stroke="white" stroke-width="2"/>
-                    <circle cx="32" cy="52.5" r="1.5" fill="white"/>
-                    <rect x="28" y="24" width="8" height="12" fill="white"/>
-                    <rect x="28" y="38" width="8" height="4" fill="white"/>
-                </svg>
-                <h3 class="solution-name">Mobile Testing</h3>
-            </div>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Functional Testing</h3>
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            Our functional testing validates that your application works according to specified requirements. We verify each function by providing appropriate input and examining the output against functional requirements.
+                        </div>
+                    </div>
+                </div>
 
-            <!-- API Testing -->
-            <div class="solution-card">
-                <svg class="solution-icon" viewBox="0 0 64 64">
-                    <circle cx="32" cy="20" r="6" stroke="white" stroke-width="2" fill="none"/>
-                    <circle cx="18" cy="44" r="6" stroke="white" stroke-width="2" fill="none"/>
-                    <circle cx="46" cy="44" r="6" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="32" y1="26" x2="32" y2="32" stroke="white" stroke-width="2"/>
-                    <line x1="28" y1="32" x2="22" y2="40" stroke="white" stroke-width="2"/>
-                    <line x1="36" y1="32" x2="42" y2="40" stroke="white" stroke-width="2"/>
-                    <circle cx="32" cy="32" r="3" fill="white"/>
-                </svg>
-                <h3 class="solution-name">API Testing</h3>
-            </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">UI/UX Testing</h3>
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            We ensure your interface is intuitive, visually appealing, and provides an excellent user experience. Our testing covers usability, accessibility, and design consistency across all platforms.
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Desktop Testing -->
-            <div class="solution-card">
-                <svg class="solution-icon" viewBox="0 0 64 64">
-                    <rect x="10" y="14" width="44" height="30" rx="2" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="10" y1="40" x2="54" y2="40" stroke="white" stroke-width="2"/>
-                    <rect x="24" y="44" width="16" height="6" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="18" y1="50" x2="46" y2="50" stroke="white" stroke-width="2.5"/>
-                    <rect x="16" y="20" width="12" height="8" stroke="white" stroke-width="1.5" fill="none"/>
-                    <line x1="16" y1="23" x2="28" y2="23" stroke="white" stroke-width="1.5"/>
-                </svg>
-                <h3 class="solution-name">Desktop Testing</h3>
-            </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Performance Testing</h3>
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            Our performance testing evaluates system speed, scalability, and stability under various load conditions. We identify bottlenecks and optimize your application for peak performance.
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Sales Force Testing -->
-            <div class="solution-card">
-                <svg class="solution-icon" viewBox="0 0 64 64">
-                    <rect x="14" y="18" width="36" height="28" rx="2" stroke="white" stroke-width="2" fill="none"/>
-                    <circle cx="32" cy="30" r="6" stroke="white" stroke-width="2" fill="none"/>
-                    <path d="M 26 35 Q 32 38 38 35" stroke="white" stroke-width="2" fill="none"/>
-                    <rect x="20" y="12" width="24" height="6" rx="1" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="32" y1="12" x2="32" y2="18" stroke="white" stroke-width="2"/>
-                </svg>
-                <h3 class="solution-name">Sales Force Testing</h3>
-            </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Security Testing</h3>
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            We conduct comprehensive security assessments to identify vulnerabilities and protect your application from potential threats. Our testing ensures data integrity and compliance with security standards.
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Database Testing -->
-            <div class="solution-card">
-                <svg class="solution-icon" viewBox="0 0 64 64">
-                    <rect x="14" y="14" width="36" height="36" rx="2" stroke="white" stroke-width="2" fill="none"/>
-                    <line x1="14" y1="24" x2="50" y2="24" stroke="white" stroke-width="2"/>
-                    <line x1="14" y1="34" x2="50" y2="34" stroke="white" stroke-width="2"/>
-                    <line x1="14" y1="44" x2="50" y2="44" stroke="white" stroke-width="2"/>
-                    <line x1="26" y1="14" x2="26" y2="50" stroke="white" stroke-width="2"/>
-                    <circle cx="38" cy="29" r="2.5" fill="white"/>
-                    <path d="M 42 29 L 44 31 L 48 27" stroke="white" stroke-width="2" fill="none"/>
-                </svg>
-                <h3 class="solution-name">Database Testing</h3>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Cross-Browser & Cross-Device Testing</h3>
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            We verify that your application functions flawlessly across different browsers, devices, and operating systems. Our testing ensures consistent user experience regardless of platform.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">API Testing</h3>
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            Our API testing validates the functionality, reliability, and security of your application programming interfaces. We ensure seamless integration and data exchange between systems.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3 class="accordion-title">Automation Testing</h3>
+                        <div class="accordion-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            We implement automated testing frameworks to increase efficiency and coverage. Our automation solutions reduce testing time while maintaining high quality and consistency.
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const wasActive = item.classList.contains('active');
+                
+                // Close all items
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Create circuit lines
+        const circuitLines = document.getElementById('circuitLines');
+        for (let i = 0; i < 8; i++) {
+            const line = document.createElement('div');
+            line.className = 'circuit-line';
+            line.style.top = `${Math.random() * 100}%`;
+            line.style.width = `${30 + Math.random() * 40}%`;
+            line.style.left = `${Math.random() * 70}%`;
+            line.style.animationDelay = `${Math.random() * 3}s`;
+            line.style.animationDuration = `${2 + Math.random() * 2}s`;
+            circuitLines.appendChild(line);
+        }
+
+        // Create particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.setProperty('--tx', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.setProperty('--ty', `${(Math.random() - 0.5) * 200}px`);
+            particle.style.animationDelay = `${Math.random() * 4}s`;
+            particle.style.animationDuration = `${3 + Math.random() * 2}s`;
+            particlesContainer.appendChild(particle);
+        }
+    </script>
 </body>
 </html>

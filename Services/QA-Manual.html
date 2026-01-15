@@ -23,7 +23,7 @@
                     <div class="nav-links-wrapper">
                         <!-- Solutions Dropdown -->
                         <div class="nav-item">
-                            <a href="#" class="nav-links">
+                            <a href="../solutions.html" class="nav-links">
                                 Solutions <span class="dropdown-arrow material-icons">expand_more</span>
                             </a>
                             <div class="dropdown-menu solutions-dropdown">
@@ -78,16 +78,16 @@
     
                         <!-- Services Dropdown with breadcrumb navigation and nested QA structure -->
                         <div class="nav-item">
-                            <a href="#" class="nav-links">
+                            <a href="../Services/service-AI.html" class="nav-links">
                                 Services <span class="dropdown-arrow material-icons">expand_more</span>
                             </a>
                             <div class="dropdown-menu services-dropdown">
                                 <div class="dropdown-container">
                                     <!-- Breadcrumb navigation for category switching -->
                                     <div class="services-breadcrumb">
-                                        <span class="breadcrumb-item active" data-category="ai">AI</span>
+                                        <a href="../Services/service-AI.html" class="breadcrumb-item active" data-category="ai">AI</a>
                                         <span class="breadcrumb-separator">\</span>
-                                        <span class="breadcrumb-item" data-category="qa">QA</span>
+                                        <a href="../Services/QA-Manual.html" class="breadcrumb-item" data-category="qa">QA</a>
                                     </div>
     
                                     <!-- AI Content (Default) -->
@@ -163,8 +163,8 @@
                                     <div class="services-content" id="qa-content">
                                         <!-- QA category selector - simple text links, not dropdown buttons -->
                                         <div class="qa-selector">
-                                            <span class="qa-option active" data-qa-type="manual">QA - Manual</span>
-                                            <span class="qa-option" data-qa-type="automation">QA - Automation</span>
+                                            <a href="../Services/QA-Manual.html" class="qa-option active" data-qa-type="manual">QA - Manual</a>
+                                            <a href="../Services/QA-Manual.html" class="qa-option" data-qa-type="automation">QA - Automation</a>
                                         </div>
     
                                         <!-- QA - Manual (Default/Active) -->
@@ -276,13 +276,13 @@
     
                         <!-- Why Partner Dropdown -->
                         <div class="nav-item">
-                            <a href="#" class="nav-links">
+                            <a href="../why-us.html" class="nav-links">
                                 Why Partner With SYSLATECH <span class="dropdown-arrow material-icons">expand_more</span>
                             </a>
                             <div class="dropdown-menu partner-dropdown">
                                 <div class="dropdown-container">
                                     <div class="dropdown-grid cols-2">
-                                        <a href="" class="dropdown-item">
+                                        <a href="../Why-Partner/Experts-in-AI-Tools.html" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="../Images/nav-images/Experts in AI Tools.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Experts in AI Tools</h3>
@@ -317,48 +317,48 @@
     
                         <!-- Tools & Tech Dropdown -->
                         <div class="nav-item">
-                            <a href="#" class="nav-links">
+                            <a href="../Tools&Tech.html" class="nav-links">
                                 Tools & Tech <span class="dropdown-arrow material-icons">expand_more</span>
                             </a>
                             <div class="dropdown-menu tools-dropdown">
                                 <div class="dropdown-container">
                                     <div class="dropdown-grid cols-2">
-                                        <a href="" class="dropdown-item">
+                                        <a href="../Tools&Tech.html" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="../Images/nav-images/Selenium.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Selenium</h3>
                                                 <p>Smart test intelligence for reliable software quality</p>
                                             </div>
                                         </a>
-                                        <a href="" class="dropdown-item">
+                                        <a href="../Tools&Tech.html" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="../Images/nav-images/Katalon Studio.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Katalon Studio</h3>
                                                 <p>Write test cases as easily as plain English commands</p>
                                             </div>
                                         </a>
-                                        <a href="" class="dropdown-item">
+                                        <a href="../Tools&Tech.html" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="../Images/nav-images/Testigma.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Testigma</h3>
                                                 <p>Robust, accurate scripts built for real-world scenarios</p>
                                             </div>
                                         </a>
-                                        <a href="" class="dropdown-item">
+                                        <a href="../Tools&Tech.html" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="../Images/nav-images/Tricentis Tosca.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Tricentis Tosca</h3>
                                                 <p>AI-driven test frameworks that build themselves</p>
                                             </div>
                                         </a>
-                                        <a href="" class="dropdown-item">
+                                        <a href="../Tools&Tech.html" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="../Images/nav-images/Playwrite.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Playwrite</h3>
                                                 <p>Self-healing tests that evolve with your application</p>
                                             </div>
                                         </a>
-                                        <a href="" class="dropdown-item">
+                                        <a href="../Tools&Tech.html" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="../Images/nav-images/Cypress.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Cypress</h3>
@@ -660,117 +660,130 @@
     </div>
 
     <!-- navbar functionality -->
-     <script>
-         // Services dropdown breadcrumb navigation
-         const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
-         const aiContent = document.getElementById('ai-content');
-         const qaContent = document.getElementById('qa-content');
- 
-         // Function to switch category content
-         const switchCategory = (category) => {
-             breadcrumbItems.forEach(b => b.classList.remove('active'));
-             document.querySelector(`.breadcrumb-item[data-category="${category}"]`)
-                 .classList.add('active');
- 
-             if (category === 'ai') {
-                 aiContent.classList.add('active');
-                 qaContent.classList.remove('active');
-             } else if (category === 'qa') {
-                 aiContent.classList.remove('active');
-                 qaContent.classList.add('active'); // ✅ FIX
-             }
-         };
- 
- 
-         breadcrumbItems.forEach(item => {
-             item.addEventListener('click', (e) => {
-                 e.preventDefault();
-                 switchCategory(item.dataset.category);
-             });
- 
-             item.addEventListener('mouseenter', () => {
-                 switchCategory(item.dataset.category);
-             });
-         });
- 
-         // Handle QA category selector and content switching
-         const qaOptions = document.querySelectorAll('.qa-option');
-         const qaManualContent = document.querySelector('.qa-manual-content');
-         const qaAutomationContent = document.querySelector('.qa-automation-content');
- 
-         // Function to switch QA content
-         const switchQAContent = (qaType) => {
-             // Update active QA option
-             qaOptions.forEach(opt => opt.classList.remove('active'));
-             document.querySelector(`.qa-option[data-qa-type="${qaType}"]`).classList.add('active');
- 
-             // Show/hide QA content
-             if (qaType === 'manual') {
-                 qaManualContent.classList.add('active');
-                 qaAutomationContent.classList.remove('active');
-             } else if (qaType === 'automation') {
-                 qaManualContent.classList.remove('active');
-                 qaAutomationContent.classList.add('active');
-             }
-         };
- 
-         qaOptions.forEach(option => {
-             option.addEventListener('click', (e) => {
-                 e.preventDefault();
-                 switchQAContent(option.dataset.qaType);
-             });
- 
-             option.addEventListener('mouseenter', () => {
-                 switchQAContent(option.dataset.qaType);
-             });
-         });
- 
- 
-         const hamburgerBtn = document.getElementById('hamburgerBtn');
-         const mobileMenu = document.getElementById('mobileMenu');
- 
-         hamburgerBtn.addEventListener('click', () => {
-             hamburgerBtn.classList.toggle('active');
-             mobileMenu.classList.toggle('active');
-         });
- 
-         // Close menu when clicking outside or on a direct link
-         document.addEventListener('click', (e) => {
-             if (!e.target.closest('.hamburger-menu') && !e.target.closest('.mobile-menu')) {
-                 hamburgerBtn.classList.remove('active');
-                 mobileMenu.classList.remove('active');
-             }
-         });
- 
-         // Handle main menu items (Solutions, Services, Why Partner, Tools & Tech)
-         document.querySelectorAll('.mobile-menu-item[data-menu]').forEach(item => {
-             const label = item.querySelector('.mobile-menu-item-label');
-             label.addEventListener('click', (e) => {
-                 e.stopPropagation();
-                 item.classList.toggle('active');
-             });
-         });
- 
-         document.querySelectorAll('.mobile-submenu-item.has-submenu').forEach(item => {
-             item.addEventListener('click', (e) => {
-                 e.stopPropagation();
- 
-                 const currentLevel = item.parentElement;
- 
-                 // Close other items at the same level
-                 currentLevel
-                 .querySelectorAll(':scope > .mobile-submenu-item.has-submenu')
-                 .forEach(sibling => {
-                     if (sibling !== item) {
-                     sibling.classList.remove('active');
-                     }
-                 });
- 
-                 // Toggle current item
-                 item.classList.toggle('active');
-             });
-         });
- 
-     </script>
+    <script>
+        // Services dropdown breadcrumb navigation
+        const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
+        const aiContent = document.getElementById('ai-content');
+        const qaContent = document.getElementById('qa-content');
+
+        // Function to switch category content
+        const switchCategory = (category) => {
+            breadcrumbItems.forEach(b => b.classList.remove('active'));
+            document.querySelector(`.breadcrumb-item[data-category="${category}"]`)
+                .classList.add('active');
+
+            if (category === 'ai') {
+                aiContent.classList.add('active');
+                qaContent.classList.remove('active');
+            } else if (category === 'qa') {
+                aiContent.classList.remove('active');
+                qaContent.classList.add('active'); // ✅ FIX
+            }
+        };
+
+
+        breadcrumbItems.forEach(item => {
+
+            // Hover = dropdown switch (no navigation)
+            item.addEventListener('mouseenter', () => {
+                switchCategory(item.dataset.category);
+            });
+
+            // Click = normal link navigation (no JS blocking)
+            item.addEventListener('click', () => {
+                // DO NOTHING here
+                // Browser will redirect naturally
+            });
+
+        });
+
+
+        // Handle QA category selector and content switching
+        const qaOptions = document.querySelectorAll('.qa-option');
+        const qaManualContent = document.querySelector('.qa-manual-content');
+        const qaAutomationContent = document.querySelector('.qa-automation-content');
+
+        // Function to switch QA content
+        const switchQAContent = (qaType) => {
+            // Update active QA option
+            qaOptions.forEach(opt => opt.classList.remove('active'));
+            document.querySelector(`.qa-option[data-qa-type="${qaType}"]`).classList.add('active');
+
+            // Show/hide QA content
+            if (qaType === 'manual') {
+                qaManualContent.classList.add('active');
+                qaAutomationContent.classList.remove('active');
+            } else if (qaType === 'automation') {
+                qaManualContent.classList.remove('active');
+                qaAutomationContent.classList.add('active');
+            }
+        };
+
+        qaOptions.forEach(option => {
+
+            // Hover → preview content in dropdown
+            option.addEventListener('mouseenter', () => {
+                switchQAContent(option.dataset.qaType);
+            });
+
+            // Click → allow normal link navigation
+            option.addEventListener('click', () => {
+                // DO NOTHING
+                // browser handles redirect
+            });
+
+        });
+
+
+
+
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside or on a direct link
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.hamburger-menu') && !e.target.closest('.mobile-menu')) {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Handle main menu items (Solutions, Services, Why Partner, Tools & Tech)
+        document.querySelectorAll('.mobile-menu-item[data-menu]').forEach(item => {
+            const label = item.querySelector('.mobile-menu-item-label');
+            label.addEventListener('click', (e) => {
+                e.stopPropagation();
+                item.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.mobile-submenu-item.has-submenu').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                const currentLevel = item.parentElement;
+
+                // Close other items at the same level
+                currentLevel
+                .querySelectorAll(':scope > .mobile-submenu-item.has-submenu')
+                .forEach(sibling => {
+                    if (sibling !== item) {
+                    sibling.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+
+
+    </script>
 </body>
 </html>

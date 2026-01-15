@@ -699,116 +699,129 @@
 
     <!-- navbar functionality -->
     <script>
-         // Services dropdown breadcrumb navigation
-         const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
-         const aiContent = document.getElementById('ai-content');
-         const qaContent = document.getElementById('qa-content');
- 
-         // Function to switch category content
-         const switchCategory = (category) => {
-             breadcrumbItems.forEach(b => b.classList.remove('active'));
-             document.querySelector(`.breadcrumb-item[data-category="${category}"]`)
-                 .classList.add('active');
- 
-             if (category === 'ai') {
-                 aiContent.classList.add('active');
-                 qaContent.classList.remove('active');
-             } else if (category === 'qa') {
-                 aiContent.classList.remove('active');
-                 qaContent.classList.add('active'); // ✅ FIX
-             }
-         };
- 
- 
-         breadcrumbItems.forEach(item => {
-             item.addEventListener('click', (e) => {
-                 e.preventDefault();
-                 switchCategory(item.dataset.category);
-             });
- 
-             item.addEventListener('mouseenter', () => {
-                 switchCategory(item.dataset.category);
-             });
-         });
- 
-         // Handle QA category selector and content switching
-         const qaOptions = document.querySelectorAll('.qa-option');
-         const qaManualContent = document.querySelector('.qa-manual-content');
-         const qaAutomationContent = document.querySelector('.qa-automation-content');
- 
-         // Function to switch QA content
-         const switchQAContent = (qaType) => {
-             // Update active QA option
-             qaOptions.forEach(opt => opt.classList.remove('active'));
-             document.querySelector(`.qa-option[data-qa-type="${qaType}"]`).classList.add('active');
- 
-             // Show/hide QA content
-             if (qaType === 'manual') {
-                 qaManualContent.classList.add('active');
-                 qaAutomationContent.classList.remove('active');
-             } else if (qaType === 'automation') {
-                 qaManualContent.classList.remove('active');
-                 qaAutomationContent.classList.add('active');
-             }
-         };
- 
-         qaOptions.forEach(option => {
-             option.addEventListener('click', (e) => {
-                 e.preventDefault();
-                 switchQAContent(option.dataset.qaType);
-             });
- 
-             option.addEventListener('mouseenter', () => {
-                 switchQAContent(option.dataset.qaType);
-             });
-         });
- 
- 
-         const hamburgerBtn = document.getElementById('hamburgerBtn');
-         const mobileMenu = document.getElementById('mobileMenu');
- 
-         hamburgerBtn.addEventListener('click', () => {
-             hamburgerBtn.classList.toggle('active');
-             mobileMenu.classList.toggle('active');
-         });
- 
-         // Close menu when clicking outside or on a direct link
-         document.addEventListener('click', (e) => {
-             if (!e.target.closest('.hamburger-menu') && !e.target.closest('.mobile-menu')) {
-                 hamburgerBtn.classList.remove('active');
-                 mobileMenu.classList.remove('active');
-             }
-         });
- 
-         // Handle main menu items (Solutions, Services, Why Partner, Tools & Tech)
-         document.querySelectorAll('.mobile-menu-item[data-menu]').forEach(item => {
-             const label = item.querySelector('.mobile-menu-item-label');
-             label.addEventListener('click', (e) => {
-                 e.stopPropagation();
-                 item.classList.toggle('active');
-             });
-         });
- 
-         document.querySelectorAll('.mobile-submenu-item.has-submenu').forEach(item => {
-             item.addEventListener('click', (e) => {
-                 e.stopPropagation();
- 
-                 const currentLevel = item.parentElement;
- 
-                 // Close other items at the same level
-                 currentLevel
-                 .querySelectorAll(':scope > .mobile-submenu-item.has-submenu')
-                 .forEach(sibling => {
-                     if (sibling !== item) {
-                     sibling.classList.remove('active');
-                     }
-                 });
- 
-                 // Toggle current item
-                 item.classList.toggle('active');
-             });
-         });
- 
+        // Services dropdown breadcrumb navigation
+        const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
+        const aiContent = document.getElementById('ai-content');
+        const qaContent = document.getElementById('qa-content');
+
+        // Function to switch category content
+        const switchCategory = (category) => {
+            breadcrumbItems.forEach(b => b.classList.remove('active'));
+            document.querySelector(`.breadcrumb-item[data-category="${category}"]`)
+                .classList.add('active');
+
+            if (category === 'ai') {
+                aiContent.classList.add('active');
+                qaContent.classList.remove('active');
+            } else if (category === 'qa') {
+                aiContent.classList.remove('active');
+                qaContent.classList.add('active'); // ✅ FIX
+            }
+        };
+
+
+        breadcrumbItems.forEach(item => {
+
+            // Hover = dropdown switch (no navigation)
+            item.addEventListener('mouseenter', () => {
+                switchCategory(item.dataset.category);
+            });
+
+            // Click = normal link navigation (no JS blocking)
+            item.addEventListener('click', () => {
+                // DO NOTHING here
+                // Browser will redirect naturally
+            });
+
+        });
+
+
+        // Handle QA category selector and content switching
+        const qaOptions = document.querySelectorAll('.qa-option');
+        const qaManualContent = document.querySelector('.qa-manual-content');
+        const qaAutomationContent = document.querySelector('.qa-automation-content');
+
+        // Function to switch QA content
+        const switchQAContent = (qaType) => {
+            // Update active QA option
+            qaOptions.forEach(opt => opt.classList.remove('active'));
+            document.querySelector(`.qa-option[data-qa-type="${qaType}"]`).classList.add('active');
+
+            // Show/hide QA content
+            if (qaType === 'manual') {
+                qaManualContent.classList.add('active');
+                qaAutomationContent.classList.remove('active');
+            } else if (qaType === 'automation') {
+                qaManualContent.classList.remove('active');
+                qaAutomationContent.classList.add('active');
+            }
+        };
+
+        qaOptions.forEach(option => {
+
+            // Hover → preview content in dropdown
+            option.addEventListener('mouseenter', () => {
+                switchQAContent(option.dataset.qaType);
+            });
+
+            // Click → allow normal link navigation
+            option.addEventListener('click', () => {
+                // DO NOTHING
+                // browser handles redirect
+            });
+
+        });
+
+
+
+
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside or on a direct link
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.hamburger-menu') && !e.target.closest('.mobile-menu')) {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Handle main menu items (Solutions, Services, Why Partner, Tools & Tech)
+        document.querySelectorAll('.mobile-menu-item[data-menu]').forEach(item => {
+            const label = item.querySelector('.mobile-menu-item-label');
+            label.addEventListener('click', (e) => {
+                e.stopPropagation();
+                item.classList.toggle('active');
+            });
+        });
+
+        document.querySelectorAll('.mobile-submenu-item.has-submenu').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+
+                const currentLevel = item.parentElement;
+
+                // Close other items at the same level
+                currentLevel
+                .querySelectorAll(':scope > .mobile-submenu-item.has-submenu')
+                .forEach(sibling => {
+                    if (sibling !== item) {
+                    sibling.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+
+
+
     </script>
 </body>
 </html>

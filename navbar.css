@@ -569,6 +569,7 @@ body {
     border-radius: 6px;
     transition: all 0.3s ease;
     user-select: none;
+    text-decoration: none;
 }
 
 .breadcrumb-item:hover {
@@ -744,6 +745,7 @@ body {
     transition: all 0.3s ease;
     user-select: none;
     font-size: 0.8rem;
+    text-decoration: none;
 }
 
 .qa-option:hover {

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link rel="stylesheet" href="./blogs.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Blogs Hero Section */
+.blogs-hero-section {
+    width: 100%;
+    padding: 120px 0 80px 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
+    position: relative;
+}
+
+.blogs-hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.blogs-hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #2D3E50;
+    font-family: "CircularStd", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+}
+
+.breadcrumb-link {
+    color: #7CB342;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+    color: #558B2F;
+}
+
+.breadcrumb-separator {
+    color: #7CB342;
+}
+
+.breadcrumb-current {
+    color: #5A6C7D;
+}
+
+/* Blogs Content Section */
+.blogs-content-section {
+    width: 100%;
+    padding: 80px 0 120px 0;
+    background: #ffffff;
+}
+
+.blogs-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Main Blog Content */
+.blogs-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.blog-post-card {
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.blog-post-image-wrapper {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.blog-post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-post-card:hover .blog-post-image {
+    transform: scale(1.08);
+}
+
+.blog-post-content {
+    padding: 35px 40px 40px 40px;
+}
+
+.blog-post-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #2D3E50;
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blog-post-excerpt {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #6B7684;
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 25px;
+}
+
+.blog-read-more-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #7CB342;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Manrope", sans-serif;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.blog-read-more-btn:hover {
+    background: #558B2F;
+    transform: translateX(5px);
+}
+
+/* Sidebar - Sticky Recent Posts */
+.blogs-sidebar {
+    position: relative;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 100px;
+    background: #F8FAFB;
+    border-radius: 20px;
+    padding: 35px 30px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #2D3E50;
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #7CB342;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.recent-posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.recent-post-item {
+    display: flex;
+    gap: 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 15px;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+.recent-post-item:hover {
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transform: translateX(5px);
+}
+
+.recent-post-image-wrapper {
+    width: 90px;
+    height: 90px;
+    min-width: 90px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.recent-post-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.recent-post-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.recent-post-title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #2D3E50;
+    font-family: "Manrope", sans-serif;
+    text-transform: uppercase;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.recent-post-excerpt {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6B7684;
+    font-family: "Manrope", sans-serif;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Tablet Responsive (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .blogs-content-wrapper {
+        grid-template-columns: 1fr 320px;
+        gap: 40px;
+    }
+
+    .blogs-hero-title {
+        font-size: 40px;
+    }
+
+    .blog-post-image-wrapper {
+        height: 350px;
+    }
+
+    .blog-post-content {
+        padding: 30px 35px;
+    }
+
+    .blog-post-title {
+        font-size: 22px;
+    }
+
+    .sidebar-sticky {
+        padding: 30px 25px;
+    }
+
+    .sidebar-title {
+        font-size: 20px;
+    }
+
+    .recent-post-image-wrapper {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+    }
+}
+
+/* Mobile Responsive (max-width: 768px) */
+@media (max-width: 768px) {
+    .blogs-hero-section {
+        padding: 80px 20px 50px 20px;
+    }
+
+    .blogs-hero-title {
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .breadcrumb {
+        font-size: 14px;
+    }
+
+    .blogs-content-section {
+        padding: 50px 20px 80px 20px;
+    }
+
+    .blogs-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .blogs-main-content {
+        gap: 35px;
+    }
+
+    .blog-post-card {
+        border-radius: 15px;
+    }
+
+    .blog-post-image-wrapper {
+        height: 280px;
+    }
+
+    .blog-post-content {
+        padding: 25px 20px 30px 20px;
+    }
+
+    .blog-post-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .blog-post-excerpt {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .blog-read-more-btn {
+        padding: 10px 28px;
+        font-size: 13px;
+    }
+
+    /* Sidebar becomes non-sticky on mobile */
+    .blogs-sidebar {
+        order: -1;
+    }
+
+    .sidebar-sticky {
+        position: static;
+        padding: 30px 20px;
+    }
+
+    .sidebar-title {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .recent-posts-list {
+        gap: 20px;
+    }
+
+    .recent-post-item {
+        padding: 12px;
+    }
+
+    .recent-post-image-wrapper {
+        width: 75px;
+        height: 75px;
+        min-width: 75px;
+    }
+
+    .recent-post-title {
+        font-size: 13px;
+    }
+
+    .recent-post-excerpt {
+        font-size: 11px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .blogs-hero-section {
+        padding: 70px 15px 40px 15px;
+    }
+
+    .blogs-hero-title {
+        font-size: 28px;
+    }
+
+    .breadcrumb {
+        font-size: 13px;
+    }
+
+    .blogs-content-section {
+        padding: 40px 15px 60px 15px;
+    }
+
+    .blogs-main-content {
+        gap: 30px;
+    }
+
+    .blog-post-image-wrapper {
+        height: 240px;
+    }
+
+    .blog-post-content {
+        padding: 20px 18px 25px 18px;
+    }
+
+    .blog-post-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .blog-post-excerpt {
+        font-size: 13px;
+        margin-bottom: 18px;
+    }
+
+    .blog-read-more-btn {
+        padding: 9px 24px;
+        font-size: 12px;
+    }
+
+    .sidebar-sticky {
+        padding: 25px 18px;
+        border-radius: 15px;
+    }
+
+    .sidebar-title {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .recent-posts-list {
+        gap: 18px;
+    }
+
+    .recent-post-item {
+        padding: 10px;
+        gap: 12px;
+    }
+
+    .recent-post-image-wrapper {
+        width: 70px;
+        height: 70px;
+        min-width: 70px;
+    }
+
+    .recent-post-title {
+        font-size: 12px;
+    }
+
+    .recent-post-excerpt {
+        font-size: 10px;
+    }
+}
+
+/* Extra Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+    .blogs-hero-title {
+        font-size: 24px;
+    }
+
+    .blog-post-image-wrapper {
+        height: 200px;
+    }
+
+    .blog-post-title {
+        font-size: 16px;
+    }
+
+    .recent-post-image-wrapper {
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- Your existing navbar here -->
+        
+        <section class="blogs-hero-section">
+            <div class="main-container">
+                <div class="blogs-hero-wrapper">
+                    <h1 class="blogs-hero-title">BLOGS</h1>
+                    <div class="breadcrumb">
+                        <a href="./index.html" class="breadcrumb-link">Homepage</a>
+                        <span class="breadcrumb-separator">→</span>
+                        <span class="breadcrumb-current">Blogs</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blogs-content-section">
+            <div class="main-container">
+                <div class="blogs-content-wrapper">
+                    <!-- Left Side - Scrollable Blog Posts -->
+                    <div class="blogs-main-content">
+                        <!-- Blog Post 1 -->
+                        <article class="blog-post-card">
+                            <div class="blog-post-image-wrapper">
+                                <img src="./Images/blog1.jpg" alt="Apartment Project" class="blog-post-image">
+                            </div>
+                            <div class="blog-post-content">
+                                <h2 class="blog-post-title">WHY INVEST IN AN APARTMENT PROJECT IN BANGALORE WITH SOHAN REALTY?</h2>
+                                <p class="blog-post-excerpt">Bangalore has firmly established itself as one of India's most promising real estate destinations. With its ever-growing IT sector, thriving start-up ecosystem...</p>
+                                <a href="#" class="blog-read-more-btn">KNOW MORE</a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 2 -->
+                        <article class="blog-post-card">
+                            <div class="blog-post-image-wrapper">
+                                <img src="./Images/blog2.jpg" alt="Flat in Jakkur" class="blog-post-image">
+                            </div>
+                            <div class="blog-post-content">
+                                <h2 class="blog-post-title">WHY INVEST IN A FLAT IN JAKKUR, BANGALORE?</h2>
+                                <p class="blog-post-excerpt">Bangalore's real estate market has witnessed tremendous growth in the last decade, and one location that stands out for smart property investment is Jakkur...</p>
+                                <a href="#" class="blog-read-more-btn">KNOW MORE</a>
+                            </div>
+                        </article>
+
+                        <!-- Blog Post 3 -->
+                        <article class="blog-post-card">
+                            <div class="blog-post-image-wrapper">
+                                <img src="./Images/blog3.jpg" alt="Apartment or Villa" class="blog-post-image">
+                            </div>
+                            <div class="blog-post-content">
+                                <h2 class="blog-post-title">APARTMENT OR VILLA – WHICH IS BETTER?</h2>
+                                <p class="blog-post-excerpt">One of the biggest dilemmas faced by modern homebuyers is deciding between an apartment and a villa. Both options have their unique advantages...</p>
+                                <a href="#" class="blog-read-more-btn">KNOW MORE</a>
+                            </div>
+                        </article>
+
+                        <!-- Add more blog posts as needed -->
+                    </div>
+
+                    <!-- Right Side - Sticky Recent Posts -->
+                    <aside class="blogs-sidebar">
+                        <div class="sidebar-sticky">
+                            <h3 class="sidebar-title">Recent Posts</h3>
+                            <div class="recent-posts-list">
+                                <!-- Recent Post 1 -->
+                                <a href="#" class="recent-post-item">
+                                    <div class="recent-post-image-wrapper">
+                                        <img src="./Images/blog1.jpg" alt="Recent Post" class="recent-post-image">
+                                    </div>
+                                    <div class="recent-post-info">
+                                        <h4 class="recent-post-title">WHY INVEST IN AN APARTMENT PROJECT IN BANGALORE WITH SOHAN REALTY?</h4>
+                                        <p class="recent-post-excerpt">Bangalore has firmly established itself as one of India's most promising real estate destinations...</p>
+                                    </div>
+                                </a>
+
+                                <!-- Recent Post 2 -->
+                                <a href="#" class="recent-post-item">
+                                    <div class="recent-post-image-wrapper">
+                                        <img src="./Images/blog2.jpg" alt="Recent Post" class="recent-post-image">
+                                    </div>
+                                    <div class="recent-post-info">
+                                        <h4 class="recent-post-title">WHY INVEST IN A FLAT IN JAKKUR, BANGALORE?</h4>
+                                        <p class="recent-post-excerpt">Bangalore's real estate market has witnessed tremendous growth in the last decade...</p>
+                                    </div>
+                                </a>
+
+                                <!-- Recent Post 3 -->
+                                <a href="#" class="recent-post-item">
+                                    <div class="recent-post-image-wrapper">
+                                        <img src="./Images/blog3.jpg" alt="Recent Post" class="recent-post-image">
+                                    </div>
+                                    <div class="recent-post-info">
+                                        <h4 class="recent-post-title">APARTMENT OR VILLA – WHICH IS BETTER?</h4>
+                                        <p class="recent-post-excerpt">One of the biggest dilemmas faced by modern homebuyers is deciding between an apartment and a villa...</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your existing footer here -->
+    </div>
+
+    <script>
+        // Smooth scroll behavior for the sticky sidebar
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar-sticky');
+    const mainContent = document.querySelector('.blogs-main-content');
+    
+    // Optional: Add smooth scroll effect
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        
+        // You can add additional scroll-based animations here if needed
+    });
+    
+    // Add click tracking for recent posts (optional)
+    const recentPosts = document.querySelectorAll('.recent-post-item');
+    recentPosts.forEach(post => {
+        post.addEventListener('click', function(e) {
+            // You can add analytics tracking here
+            console.log('Recent post clicked');
+        });
+    });
+});
+    </script>
+
+    <script src="./blogs.js"></script>
+</body>
+</html>

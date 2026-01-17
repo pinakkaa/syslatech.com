@@ -319,3 +319,376 @@
         font-size: 16px;
     }
 }
+
+
+
+/* Mobile Responsive - QA Manual Services Page */
+
+/* Hero Section Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        width: 100vw;
+        height: auto;
+        min-height: 50vh;
+        padding: 80px 20px 40px 20px;
+    }
+
+    .second-bg {
+        width: 100vw;
+        height: 50vh;
+        background-size: cover;
+        top: 3rem;
+    }
+
+    .hero-section-wrapper {
+        height: auto;
+        width: 100%;
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .hero-content-wrapper {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-logo {
+        height: 40px;
+        width: 140px;
+    }
+
+    .hero-title {
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+    }
+
+    .hero-title span {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .bg-gradent,
+    .bg-gradent-right {
+        width: 300px;
+        height: 300px;
+        filter: blur(80px);
+    }
+
+    .bg-gradent {
+        left: -100px;
+        top: -50px;
+    }
+
+    .bg-gradent-right {
+        right: -50px;
+        top: -50px;
+    }
+}
+
+/* AI Services Section Mobile */
+@media (max-width: 768px) {
+    .ai-services-section {
+        padding: 60px 20px;
+    }
+
+    .ai-services-section-wrapper {
+        gap: 30px;
+    }
+
+    .services-card-title {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .services-card-wrapper {
+        gap: 30px;
+    }
+
+    .card-black,
+    .card {
+        flex-direction: column !important;
+        padding: 24px 20px;
+        gap: 24px;
+        border-radius: 16px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .number {
+        font-size: 100px;
+        line-height: 100%;
+    }
+
+    .number::after {
+        font-size: 100px;
+    }
+
+    .title-black,
+    .title {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 12px;
+    }
+
+    .description-black,
+    .description {
+        font-size: 13px;
+        line-height: 22px;
+        max-width: 100%;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 280px;
+        border-radius: 12px;
+    }
+
+    .image-container img {
+        border-radius: 12px;
+    }
+}
+
+/* Tablet Responsive (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-section {
+        padding: 90px 60px 40px 60px;
+    }
+
+    .hero-section-wrapper {
+        width: 100%;
+        margin-left: 0;
+        padding: 3rem 4rem;
+    }
+
+    .hero-title {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .hero-title span {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .second-bg {
+        width: 100vw;
+        height: 60vh;
+    }
+
+    .ai-services-section {
+        padding: 80px 40px;
+    }
+
+    .services-card-title {
+        font-size: 30px;
+        line-height: 46px;
+    }
+
+    .services-card-wrapper {
+        gap: 36px;
+    }
+
+    .card-black,
+    .card {
+        padding: 32px;
+        gap: 50px;
+    }
+
+    .number {
+        font-size: 150px;
+    }
+
+    .number::after {
+        font-size: 150px;
+    }
+
+    .title-black,
+    .title {
+        font-size: 26px;
+    }
+
+    .description-black,
+    .description {
+        font-size: 14px;
+        max-width: 350px;
+    }
+
+    .image-container {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 70px 15px 30px 15px;
+        min-height: 45vh;
+    }
+
+    .hero-section-wrapper {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+    }
+
+    .hero-logo {
+        height: 35px;
+        width: 120px;
+    }
+
+    .hero-title {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .hero-title span {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .bg-gradent,
+    .bg-gradent-right {
+        width: 250px;
+        height: 250px;
+        filter: blur(60px);
+    }
+
+    .second-bg {
+        height: 45vh;
+        top: 2rem;
+    }
+
+    .ai-services-section {
+        padding: 40px 15px;
+    }
+
+    .ai-services-section-wrapper {
+        gap: 25px;
+    }
+
+    .services-card-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .services-card-wrapper {
+        gap: 24px;
+    }
+
+    .card-black,
+    .card {
+        padding: 20px 15px;
+        gap: 20px;
+        border-radius: 12px;
+    }
+
+    .number {
+        font-size: 80px;
+        line-height: 90%;
+    }
+
+    .number::after {
+        font-size: 80px;
+    }
+
+    .title-black,
+    .title {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+
+    .description-black,
+    .description {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .image-container {
+        height: 240px;
+        border-radius: 10px;
+    }
+
+    .image-container img {
+        border-radius: 10px;
+    }
+}
+
+/* Extra Small Mobile (max-width: 360px) */
+@media (max-width: 360px) {
+    .hero-section-wrapper {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .hero-title {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .hero-title span {
+        font-size: 17px;
+        line-height: 24px;
+    }
+
+    .ai-services-section {
+        padding: 30px 10px;
+    }
+
+    .services-card-title {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .card-black,
+    .card {
+        padding: 18px 12px;
+        gap: 18px;
+    }
+
+    .number {
+        font-size: 70px;
+    }
+
+    .number::after {
+        font-size: 70px;
+    }
+
+    .title-black,
+    .title {
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .description-black,
+    .description {
+        font-size: 11px;
+        line-height: 18px;
+    }
+
+    .image-container {
+        height: 200px;
+    }
+}
+
+/* Landscape Mobile (max-height: 500px and orientation: landscape) */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        min-height: 80vh;
+    }
+
+    .number {
+        font-size: 60px;
+    }
+
+    .number::after {
+        font-size: 60px;
+    }
+
+    .image-container {
+        height: 200px;
+    }
+}

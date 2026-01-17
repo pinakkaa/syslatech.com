@@ -491,3 +491,435 @@
     margin-right: -8rem;
     margin-top: 5rem;
 }
+
+
+
+
+
+
+/* Mobile Responsive - Main Focus */
+
+/* Hero Section Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        width: 100vw;
+        height: auto;
+        min-height: 70vh;
+        padding: 80px 20px 40px 20px;
+    }
+
+    .hero-section-wrapper {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .hero-content-wrapper {
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .hero-logo {
+        height: 40px;
+        width: 140px;
+    }
+
+    .hero-title {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .hero-title span {
+        font-size: 22px;
+        line-height: 32px;
+    }
+
+    .hero-btn {
+        font-size: 11px;
+        padding: 8px 20px;
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+
+    .hero-banner-image {
+        height: 250px;
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0;
+        object-fit: contain;
+    }
+
+    .bg-gradent,
+    .bg-gradent-right {
+        width: 300px;
+        height: 300px;
+        filter: blur(80px);
+    }
+
+    .bg-gradent {
+        left: -100px;
+        top: -50px;
+    }
+
+    .bg-gradent-right {
+        right: -50px;
+        top: -50px;
+    }
+}
+
+/* Solutions About Section Mobile */
+@media (max-width: 768px) {
+    .solutions-about-section {
+        padding: 60px 0;
+    }
+
+    .solutions-about-section-wrapper {
+        gap: 40px;
+    }
+
+    .solution-about-line-wrapper {
+        flex-direction: column !important;
+        gap: 30px;
+    }
+
+    .solutions-about-content-wrapper {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .solutions-about-image-wrapper {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+    }
+
+    .soutions-about-content-title {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .solutions-about-content-para {
+        font-size: 16px;
+        line-height: 28px;
+        max-width: 100%;
+    }
+}
+
+/* Solutions Section Mobile */
+@media (max-width: 768px) {
+    .solutions-section {
+        padding: 60px 20px;
+    }
+
+    .solutions-container {
+        padding: 40px 20px;
+    }
+
+    .solutions-header h1 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .solutions-question-mark {
+        font-size: 60px;
+    }
+
+    .solutions-cards-container,
+    .solutions-cards-container-bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .solutions-card {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 220px;
+        padding: 25px 20px;
+    }
+
+    .solutions-card-title {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .solutions-card-description {
+        font-size: 13px;
+        max-width: 100%;
+    }
+
+    .solution-card-icons {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+/* Our Approach Section Mobile */
+@media (max-width: 768px) {
+    .our-approuch-section {
+        padding: 60px 20px;
+    }
+
+    .our-approuch-section-wrapper {
+        gap: 50px;
+    }
+
+    .our-approuch-title {
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+    }
+
+    .our-approuch-description {
+        font-size: 18px;
+        line-height: 28px;
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
+    .business-impact-wrapper {
+        gap: 40px;
+    }
+
+    .feature-box {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .feature-box::before {
+        display: none;
+    }
+
+    .feature-item {
+        font-size: 16px;
+        line-height: 26px;
+        padding: 20px 15px;
+        gap: 10px;
+    }
+
+    .feature-item:nth-child(3) {
+        border-bottom: 1px solid #ccc;
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+}
+
+/* Tablet Responsive (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-section {
+        padding: 90px 60px 40px 60px;
+    }
+
+    .hero-section-wrapper {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        padding: 2.5rem;
+    }
+
+    .hero-title {
+        font-size: 26px;
+        line-height: 38px;
+    }
+
+    .hero-title span {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .hero-banner-image {
+        height: 350px;
+        width: 500px;
+        margin-right: -3rem;
+    }
+
+    .solutions-about-section {
+        padding: 80px 40px;
+    }
+
+    .solutions-about-image-wrapper {
+        width: 450px;
+        height: 300px;
+    }
+
+    .soutions-about-content-title {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .solutions-about-content-para {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .solutions-container {
+        padding: 50px 60px;
+    }
+
+    .solutions-cards-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .solutions-card {
+        width: 100%;
+    }
+
+    .our-approuch-section {
+        padding: 80px 40px;
+    }
+
+    .our-approuch-title {
+        font-size: 28px;
+    }
+
+    .our-approuch-description {
+        font-size: 22px;
+        line-height: 36px;
+    }
+
+    .feature-item {
+        font-size: 18px;
+        line-height: 32px;
+        padding: 28px 15px;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 70px 15px 30px 15px;
+        min-height: 60vh;
+    }
+
+    .hero-section-wrapper {
+        padding: 1.5rem 1rem;
+        border-radius: 24px;
+    }
+
+    .hero-logo {
+        height: 35px;
+        width: 120px;
+    }
+
+    .hero-title {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .hero-title span {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .hero-btn {
+        font-size: 10px;
+        padding: 6px 15px;
+    }
+
+    .hero-banner-image {
+        height: 200px;
+    }
+
+    .solutions-about-section {
+        padding: 40px 0;
+    }
+
+    .solutions-about-section-wrapper {
+        gap: 30px;
+    }
+
+    .solutions-about-content-wrapper {
+        padding: 0 15px;
+    }
+
+    .soutions-about-content-title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .solutions-about-content-para {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .solutions-section {
+        padding: 40px 15px;
+    }
+
+    .solutions-container {
+        padding: 30px 15px;
+        border-radius: 15px;
+    }
+
+    .solutions-header h1 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .solutions-question-mark {
+        font-size: 50px;
+    }
+
+    .solutions-card {
+        min-height: 200px;
+        padding: 20px 15px;
+    }
+
+    .solutions-card-icon {
+        margin-bottom: 15px;
+    }
+
+    .solution-card-icons {
+        height: 22px;
+        width: 22px;
+    }
+
+    .solutions-card-title {
+        font-size: 15px;
+    }
+
+    .solutions-card-description {
+        font-size: 12px;
+        margin-top: 0.5rem;
+    }
+
+    .our-approuch-section {
+        padding: 40px 15px;
+    }
+
+    .our-approuch-section-wrapper {
+        gap: 40px;
+    }
+
+    .our-approuch-title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .our-approuch-description {
+        font-size: 16px;
+        line-height: 24px;
+        padding: 0 10px;
+    }
+
+    .business-impact-wrapper {
+        gap: 30px;
+    }
+
+    .feature-item {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 15px 10px;
+    }
+
+    .icon {
+        font-size: 14px;
+    }
+}

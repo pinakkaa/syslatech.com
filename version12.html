@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opalya - Wellness Spa</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1280px;
+            width: calc(100% - 80px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            z-index: 1000;
+            background: rgba(245, 230, 211, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(107, 86, 68, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        nav:hover {
+            background: rgba(245, 230, 211, 0.6);
+            box-shadow: 0 12px 40px rgba(107, 86, 68, 0.15);
+        }
+
+        .logo {
+            font-size: 24px;
+            letter-spacing: 3px;
+            color: #6B5644;
+            font-weight: 400;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #6B5644;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4a3d30;
+        }
+
+        .contact-btn {
+            background: #6B5644;
+            color: #F5E6D3;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid #6B5644;
+            font-weight: 500;
+        }
+
+        .contact-btn:hover {
+            background: transparent;
+            color: #6B5644;
+            transform: translateY(-2px);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            width: 30px;
+            height: 24px;
+            position: relative;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 3px;
+            background: #6B5644;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+            position: absolute;
+        }
+
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .hamburger span:nth-child(3) { bottom: 0; }
+
+        .hamburger.active span:nth-child(1) {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+
+        .hamburger.active span:nth-child(3) {
+            bottom: 50%;
+            transform: translateY(50%) rotate(-45deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(245, 230, 211, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            padding: 100px 40px 40px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .mobile-nav-links a {
+            color: #6B5644;
+            text-decoration: none;
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .mobile-menu.active .mobile-nav-links a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .mobile-nav-links a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-nav-links a:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-nav-links a:nth-child(3) { transition-delay: 0.3s; }
+        .mobile-nav-links a:nth-child(4) { transition-delay: 0.4s; }
+
+        .mobile-nav-links a:hover {
+            color: #4a3d30;
+            transform: translateX(10px);
+        }
+
+        .mobile-contact-btn {
+            background: #6B5644;
+            color: #F5E6D3;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 2px solid #6B5644;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .mobile-menu.active .mobile-contact-btn {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.5s;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background: #F5E6D3;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 72px;
+            color: #6B5644;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .hero-content .italic {
+            font-style: italic;
+            font-size: 82px;
+            font-weight: 300;
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #6B5644;
+            margin: 30px 0 40px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .book-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #6B5644;
+            color: #F5E6D3;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            border: 2px solid #6B5644;
+        }
+
+        .book-btn:hover {
+            background: transparent;
+            color: #6B5644;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(107, 86, 68, 0.2);
+        }
+
+        /* Image Slider */
+        .slider-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            gap: 20px;
+            animation: scroll 40s linear infinite;
+            width: fit-content;
+        }
+
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        .slide {
+            flex-shrink: 0;
+            width: 280px;
+            height: 380px;
+            border-radius: 200px 200px 0 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .slide:hover img {
+            transform: scale(1.08);
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* About Section */
+        .about-section {
+            background: #2C2C2C;
+            padding: 120px 40px;
+            position: relative;
+        }
+
+        .about-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 600px;
+            border-radius: 40px;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            color: #D4B896;
+        }
+
+        .about-label {
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #D4894A;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .about-content h2 {
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #F5E6D3;
+        }
+
+        .about-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            color: #D4B896;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .about-btn {
+            background: #D4894A;
+            color: #2C2C2C;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .about-btn:hover {
+            background: #E09A5A;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: #2C2C2C;
+            padding: 80px 40px;
+            border-top: 1px solid rgba(212, 184, 150, 0.2);
+        }
+
+        .stats-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .stat-item {
+            text-align: left;
+            padding: 0 20px;
+            border-right: 1px solid rgba(212, 184, 150, 0.2);
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-size: 72px;
+            font-weight: 400;
+            color: #D4894A;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #D4B896;
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* Booking Section */
+        .booking-section {
+            background: #E8DED0;
+            padding: 120px 40px;
+            position: relative;
+        }
+
+        .booking-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .booking-content h2 {
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            color: #2C2C2C;
+        }
+
+        .booking-label {
+            background: #B39368;
+            color: #FFF;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        .booking-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #2C2C2C;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .booking-form {
+            background: #4A5C4E;
+            padding: 50px;
+            border-radius: 30px;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .booking-form.expanded {
+            max-height: 1000px;
+            opacity: 1;
+            margin-top: 30px;
+        }
+
+        .booking-toggle {
+            background: #B39368;
+            color: #FFF;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .booking-toggle:hover {
+            background: #C4A478;
+            transform: translateY(-2px);
+        }
+
+        .booking-toggle svg {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .booking-toggle.active svg {
+            transform: rotate(180deg);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: #FFF;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .form-group label span {
+            color: #D4894A;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Lato', sans-serif;
+            background: #F5E6D3;
+            color: #2C2C2C;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #B39368;
+            color: #FFF;
+            padding: 18px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .submit-btn:hover {
+            background: #C4A478;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1A1A1A;
+            padding: 80px 40px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 137, 74, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 28px;
+            color: #F5E6D3;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo svg {
+            width: 40px;
+            height: 40px;
+            fill: #D4894A;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            color: #F5E6D3;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            color: #B39368;
+            font-size: 16px;
+            line-height: 1.8;
+            font-family: 'Lato', sans-serif;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: #D4894A;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(212, 184, 150, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #D4894A;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #D4894A;
+            color: #1A1A1A;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 184, 150, 0.2);
+            padding-top: 30px;
+            text-align: center;
+            color: #B39368;
+            font-size: 14px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: #B39368;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover {
+            color: #D4894A;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            nav {
+                width: calc(100% - 40px);
+                padding: 15px 25px;
+                top: 20px;
+            }
+
+            .nav-links,
+            .contact-btn {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .about-container,
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .about-image {
+                height: 500px;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(212, 184, 150, 0.2);
+                padding-bottom: 30px;
+            }
+
+            .stat-item:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-content h1 {
+                font-size: 42px;
+            }
+
+            .hero-content .italic {
+                font-size: 48px;
+            }
+
+            .about-content h2 {
+                font-size: 38px;
+            }
+
+            .booking-content h2 {
+                font-size: 36px;
+            }
+
+            .booking-form {
+                padding: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 56px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">OPALYA.</div>
+        <div class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#services">SERVICES</a>
+            <a href="#booking">BOOKING</a>
+        </div>
+        <a href="#contact" class="contact-btn">CONTACT</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#services">SERVICES</a>
+            <a href="#booking">BOOKING</a>
+        </div>
+        <a href="#contact" class="mobile-contact-btn">CONTACT</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-content">
+            <h1>
+                Your Body<br>
+                <span class="italic">Deserves This</span>
+            </h1>
+            <p>Book your massage today and feel the change.</p>
+            <a href="#booking" class="book-btn">
+                BOOK NOW
+                <span>→</span>
+            </a>
+        </div>
+
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=600&fit=crop" alt="Massage therapy">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=600&fit=crop" alt="Herbal compress massage">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400&h=600&fit=crop" alt="Hot stone massage">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1596178060810-4dd9f6a4b78d?w=400&h=600&fit=crop" alt="Facial treatment">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=400&h=600&fit=crop" alt="Spa ambiance">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=600&fit=crop" alt="Relaxation therapy">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=600&fit=crop" alt="Massage therapy">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=400&h=600&fit=crop" alt="Herbal compress massage">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400&h=600&fit=crop" alt="Hot stone massage">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1596178060810-4dd9f6a4b78d?w=400&h=600&fit=crop" alt="Facial treatment">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=400&h=600&fit=crop" alt="Spa ambiance">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=600&fit=crop" alt="Relaxation therapy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&h=1000&fit=crop" alt="Spa treatment">
+            </div>
+            <div class="about-content">
+                <span class="about-label">OUR PHILOSOPHY</span>
+                <h2>Empowering You Through Mindful Wellness</h2>
+                <p>Step into a space created with intention—a place where your body, mind, and spirit are gently guided back into balance. At Wellness Bliss, we offer a range of holistic therapies and nurturing experiences designed to help you reconnect with your true self and restore your natural energy flow.</p>
+                <a href="#" class="about-btn">More About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="1000">0</span>
+                <p class="stat-label">Treatments per month</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="12">0</span>
+                <p class="stat-label">Number of practitioners</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="80">0</span>
+                <p class="stat-label">Total years of experience</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number counter" data-target="5">0</span>
+                <p class="stat-label">Treatment rooms</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/>
+                    </svg>
+                    WellnessBliss
+                </div>
+                <p>Experience tranquility and rejuvenation at our premier wellness sanctuary.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Address</h3>
+                <p>511 SW 10th Ave 1206,<br>Portland, OR, United States</p>
+                <a href="#">View Directions</a>
+            </div>
+            <div class="footer-column">
+                <h3>Work Hours</h3>
+                <p>Monday to Friday: 9AM - 6PM</p>
+                <p>Saturday: 9AM - 6PM</p>
+                <p>Sunday: 9AM - 5PM</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contacts</h3>
+                <a href="tel:+18001231234">+1 800-123-1234</a>
+                <a href="mailto:spa@example.com">spa@example.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="max-width: 1280px; margin: 0 auto;">
+                <div class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Services</a>
+                    <a href="#blog">Blog</a>
+                    <a href="#contact">Contacts</a>
+                </div>
+                <p>This is a sample website – cmsmasters © 2026 – All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const body = document.body;
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav-links a, .mobile-contact-btn').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                body.style.overflow = '';
+            });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > 100) {
+                nav.style.background = 'rgba(245, 230, 211, 0.8)';
+                nav.style.boxShadow = '0 12px 40px rgba(107, 86, 68, 0.2)';
+            } else {
+                nav.style.background = 'rgba(245, 230, 211, 0.4)';
+                nav.style.boxShadow = '0 8px 32px rgba(107, 86, 68, 0.1)';
+            }
+        });
+
+        // Hero animations
+        gsap.from('.hero-content h1', {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            delay: 0.5
+        });
+
+        gsap.from('.hero-content p', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.8
+        });
+
+        gsap.from('.hero-content .book-btn', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 1.1
+        });
+
+        // About section animations
+        gsap.from('.about-image', {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            x: -100,
+            duration: 1
+        });
+
+        gsap.from('.about-content', {
+            scrollTrigger: {
+                trigger: '.about-section',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            x: 100,
+            duration: 1
+        });
+
+        // Counter animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                    element.textContent = Math.floor(current) + '+';
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    element.textContent = target + '+';
+                }
+            };
+
+            updateCounter();
+        }
+
+        // Trigger counter animation when stats section is in view
+        ScrollTrigger.create({
+            trigger: '.stats-section',
+            start: 'top 80%',
+            once: true,
+            onEnter: () => {
+                document.querySelectorAll('.counter').forEach(counter => {
+                    animateCounter(counter);
+                });
+            }
+        });
+
+        // Stats items stagger animation
+        gsap.from('.stat-item', {
+            scrollTrigger: {
+                trigger: '.stats-section',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 0.8
+        });
+
+        // Booking section animations
+        gsap.from('.booking-content', {
+            scrollTrigger: {
+                trigger: '.booking-section',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            x: -100,
+            duration: 1
+        });
+
+        gsap.from('.booking-form', {
+            scrollTrigger: {
+                trigger: '.booking-section',
+                start: 'top 80%'
+            },
+            opacity: 0,
+            x: 100,
+            duration: 1
+        });
+
+        // Footer animations
+        gsap.from('.footer-column', {
+            scrollTrigger: {
+                trigger: '.footer',
+                start: 'top 90%'
+            },
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 0.8
+        });
+
+        // Form submission
+        document.querySelector('.booking-form form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your booking! We will contact you shortly.');
+        });
+    </script>
+</body>
+</html>

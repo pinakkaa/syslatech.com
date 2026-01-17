@@ -13,12 +13,12 @@
 }
 .second-bg {
     position: absolute;
-    background-image: url('../Images/why-us-experts-transparent.png');
+    background-image: url('./Images/solutions-bg-transparent.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 120vw;
-    height: calc(80vh);
+    width: 140vw;
+    height: calc(90vh);
     top: 0;
     z-index: 99;
 }
@@ -445,7 +445,7 @@
     gap: 12px;
     padding: 34px 20px;
     border-bottom: 1px solid #ccc;
-    font-size: 22px;
+    font-size: 25px;
     line-height: 38px;
     font-weight: 400;
     font-family: "Manrope", sans-serif;
@@ -459,4 +459,34 @@
 .icon {
     font-size: 18px;
     line-height: 1;
+}
+
+
+.hero-btn {
+    padding: 6px 30px;
+    background-color: #011019;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 600;
+    font-family: "Manrope", sans-serif;
+    max-width: 300px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid black;
+}
+.hero-btn:hover {
+    background-color: transparent;
+    color: black;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid black;
+}
+
+.hero-banner-image{
+    height: 500px;
+    width: 500px;
+    margin-right: -28rem;
+    margin-top: 5rem;
 }

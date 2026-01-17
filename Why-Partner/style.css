@@ -13,12 +13,12 @@
 }
 .second-bg {
     position: absolute;
-    background-image: url('./Images/solutions-bg-transparent.png');
+    background-image: url('../Images/why-us-experts-transparent.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 140vw;
-    height: calc(90vh);
+    width: 120vw;
+    height: calc(80vh);
     top: 0;
     z-index: 99;
 }
@@ -60,14 +60,15 @@
 }
 .hero-section-wrapper {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
+    padding: 3rem;
     align-items: center;
     height: 450px;
     width: 1080px;
     margin-left: -4rem;
     /* background: linear-gradient(90deg, #FFFFFF 0%, #ffffff1d 100%); */
     background-color: rgba(255, 255, 255, 0.158);
-    padding: 150px 446px 228px 96px;
+    /* padding: 150px 446px 228px 96px; */
     border-radius: 44px;
     backdrop-filter: blur(50px);
     border: 1px solid #ffffffe9;
@@ -445,7 +446,7 @@
     gap: 12px;
     padding: 34px 20px;
     border-bottom: 1px solid #ccc;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 38px;
     font-weight: 400;
     font-family: "Manrope", sans-serif;
@@ -459,4 +460,34 @@
 .icon {
     font-size: 18px;
     line-height: 1;
+}
+
+
+.hero-btn {
+    padding: 6px 30px;
+    background-color: #011019;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: 600;
+    font-family: "Manrope", sans-serif;
+    max-width: 300px;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid black;
+}
+.hero-btn:hover {
+    background-color: transparent;
+    color: black;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid black;
+}
+
+.hero-banner-image{
+    height: 500px;
+    width: 700px;
+    margin-right: -8rem;
+    margin-top: 5rem;
 }

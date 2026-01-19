@@ -1029,13 +1029,14 @@
 
     /* Hero Section */
     .hero-section {
-        height: 55vh;
+        height: auto;
         padding: 15px 10px;
     }
     
     .second-bg {
         height: 29vh;
         top: 16rem;
+        display: none;
     }
     
     .hero-section-wrapper {

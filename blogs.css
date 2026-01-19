@@ -541,3 +541,71 @@
         margin-top: 40px;
     }
 }
+
+
+
+
+
+/* Mobile Responsive - Contact Page */
+
+/* Hero Section Mobile */
+@media (max-width: 768px) {
+    .hero-section {
+        width: 100vw;
+        height: auto;
+        padding: 80px 20px 40px 20px;
+    }
+
+    .second-bg {
+        width: 100vw;
+        height: 60vh;
+        background-size: cover;
+        display: none;
+    }
+
+    .hero-section-wrapper {
+        height: auto;
+        width: 100%;
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+    }
+
+    .hero-content-wrapper {
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-logo {
+        height: 40px;
+        width: 140px;
+    }
+
+    .hero-title {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .hero-title span {
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    .bg-gradent,
+    .bg-gradent-right {
+        width: 300px;
+        height: 300px;
+        filter: blur(80px);
+    }
+
+    .bg-gradent {
+        left: -100px;
+        top: -50px;
+    }
+
+    .bg-gradent-right {
+        right: -50px;
+        top: -50px;
+    }
+}

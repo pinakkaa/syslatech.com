@@ -917,6 +917,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-decoration: none;
 }
 
 .mobile-submenu-item:hover {
@@ -1392,6 +1393,9 @@ input::placeholder {
         font-size: 12px;
         line-height: 20px;
     }
+    .section-bottom-vector-hero{
+        display: none;
+    }
 }
 
 /* ========================= */
@@ -1446,4 +1450,26 @@ input::placeholder {
         font-size: 11px;
         line-height: 18px;
     }
+    
+}
+
+
+.mobile-nested-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.mobile-nested-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.mobile-nested-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+a {
+    text-decoration: none;
+    color: #000;
 }

@@ -19,8 +19,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 130vw;
-    height: calc(75vh);
-    top: 5rem;
+    height: calc(60vh);
+    top: 8rem;
     z-index: 99;
 }
 .bg-gradent {

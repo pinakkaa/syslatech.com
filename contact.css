@@ -205,11 +205,12 @@
     padding: 12px 15px;
     border: 1px solid #1a212a9c !important;
     border-radius: 2px;
-    font-size: 0.95rem;
+    font-size: 12px;
     font-family: inherit;
     transition: all 0.3s ease;
     font-family: "Manrope", sans-serif;
     max-width: 100% !important;
+    border-radius: 5px;
 }
 
 .form-groups input:focus,
@@ -660,4 +661,34 @@
     .contact-info {
         gap: 20px;
     }
+}
+/* Mobile number field layout */
+.contact-mobile-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Country code dropdown */
+.contact-country-code {
+    width: 90px;
+    padding: 12px 10px;
+    border: 1px solid #1a212a9c;
+    border-radius: 2px;
+    font-size: 0.95rem;
+    background-color: #fff;
+    font-family: "Manrope", sans-serif;
+    cursor: pointer;
+}
+
+/* Remove default select arrow styling (clean look) */
+.contact-country-code {
+    appearance: none;
+    border-radius: 5px;
+}
+
+/* Focus states */
+.contact-country-code:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }

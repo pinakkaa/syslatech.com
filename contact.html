@@ -618,12 +618,35 @@
                             <form id="contactForm">
                                 <div class="form-groups">
                                     <label for="name">Name *</label>
-                                    <input type="text" id="name" name="name" class="contact-input" required>
+                                    <input type="text" placeholder="Enter your Name" id="name" name="name" class="contact-input" required>
                                 </div>
+
+                                <div class="form-groups">
+                                    <label for="number">Mobile Number *</label>
+                                
+                                    <div class="contact-mobile-group">
+                                        <select name="countryCode" class="contact-country-code">
+                                            <option value="+91" selected>+91 IN</option>
+                                            <option value="+1">+1 US</option>
+                                            <option value="+44">+44 UK</option>
+                                            <option value="+971">+971 UAE</option>
+                                        </select>
+                                
+                                        <input 
+                                            type="tel" 
+                                            name="mobile" 
+                                            placeholder="Enter your mobile number"
+                                            maxlength="10"
+                                            class="contact-input"
+                                            required
+                                        >
+                                    </div>
+                                </div>
+                                
                             
                                 <div class="form-groups">
                                     <label for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" class="contact-input" required>
+                                    <input type="email" placeholder="Enter your Email" id="email" name="email" class="contact-input" required>
                                 </div>
                             
                                 <div class="form-groups">
@@ -716,6 +739,25 @@
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Full Name" required>
                                 </div>
+                                <div class="form-group mobile-group">
+                                    <div class="country-code-box">
+                                        <select name="countryCode">
+                                            <option class="country-code-dropdown" value="+91" selected>+91 IN</option>
+                                            <option class="country-code-dropdown" value="+1">+1 US</option>
+                                            <option class="country-code-dropdown" value="+44">+44 UK</option>
+                                            <option class="country-code-dropdown" value="+971">+971 UAE</option>
+                                        </select>
+                                    </div>
+                                
+                                    <input 
+                                        type="tel" 
+                                        name="mobile" 
+                                        placeholder="Enter your phone number" 
+                                        maxlength="10" 
+                                        required
+                                    >
+                                </div>
+                                
                             
                                 <div class="form-group">
                                     <input type="email" name="email" placeholder="Your email here" required>

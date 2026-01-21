@@ -949,6 +949,7 @@
           const formData = {
             name: form.name.value,
             email: form.email.value,
+            mobile: `${form.countryCode.value} ${form.mobile.value}`,
             message: form.message.value
           };
         
@@ -975,7 +976,7 @@
             submitBtn.disabled = false;
           }
         });
-        </script>
+    </script>
         
     
 </body>

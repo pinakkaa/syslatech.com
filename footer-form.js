@@ -11,6 +11,7 @@ footerForm.addEventListener("submit", async (e) => {
   const formData = {
     name: footerForm.name.value,
     email: footerForm.email.value,
+    mobile: `${footerForm.countryCode.value} ${footerForm.mobile.value}`,
   };
 
   try {

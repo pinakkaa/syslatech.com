@@ -18,9 +18,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 110vw;
-    height: calc(90vh);
-    top: 0;
+    width: 145vw;
+    height: calc(65vh);
+    top: 5rem;
     z-index: 99;
 }
 .bg-gradent {
@@ -211,6 +211,7 @@
     font-family: "Manrope", sans-serif;
     max-width: 100% !important;
     border-radius: 5px;
+    color: #000 !important;
 }
 
 .form-groups input:focus,

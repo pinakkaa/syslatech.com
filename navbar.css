@@ -66,9 +66,9 @@ body {
 
 .section-subtitle {
     text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    color: #9C9C9C;
+    font-size: 24px;
+    font-weight: 700;
+    color: #727171;
 }
 .section-title {
     font-size: 35px;
@@ -97,10 +97,12 @@ body {
 
 /* Navbar */
 .navbar {
-    width: 100%;
-    background-color: #ffffff;
-    position: relative;
-    z-index: 1000;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+    z-index: 9999999;
+    background: #fff;
 }
 
 .navbar-wrapper {

@@ -1,953 +1,948 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Testing</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="../navbar.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Added Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        .hero-banner-image{
-            margin-right: -35rem;
-        }
-    </style>
-</head>
-<body>
-    <div class="main">
-        <nav class="navbar">
-            <div class="main-container-nav">
-                <div class="navbar-wrapper">
-                    <a href="../index.html" class="nav-image-wrapper">
-                        <img src="../Icons/Logo.svg" alt="" class="nav-image">
-                    </a>
-                    <div
-                        class="nav-links-wrapper">
-                        <!-- Solutions Dropdown -->
-                        <div class="nav-item">
-                            <a href="../solutions/Web-testing.html" class="nav-links">
-                                Solutions
-                                <span class="dropdown-arrow material-icons">expand_more</span>
-                            </a>
-                            <div class="dropdown-menu solutions-dropdown">
-                                <div class="dropdown-container">
-                                    <div class="dropdown-grid">
-                                        <a href="../solutions/Web-testing.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/web.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Web</h3>
-                                                <p>Smart test intelligence for reliable software quality</p>
-                                            </div>
-                                        </a>
-                                        <a href="../solutions/Mobile-testing.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Mobile.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Mobile</h3>
-                                                <p>Write test cases as easily as plain English commands</p>
-                                            </div>
-                                        </a>
-                                        <a href="../solutions/api-testing.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/api.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>API</h3>
-                                                <p>Robust, accurate scripts built for real-world scenarios</p>
-                                            </div>
-                                        </a>
-                                        <a href="../solutions/desktop-testing.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/desktop.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Desktop</h3>
-                                                <p>AI-driven test frameworks that build themselves</p>
-                                            </div>
-                                        </a>
-                                        <a href="../solutions/Salesforce-testing.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Saksfor.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Salesforce</h3>
-                                                <p>Self-healing tests that evolve with your application</p>
-                                            </div>
-                                        </a>
-                                        <a href="../solutions/Database-testing.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Database.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Database</h3>
-                                                <p>Unified automation across web, mobile, desktop, and APIs</p>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Services Dropdown with breadcrumb navigation and nested QA structure -->
-                        <div class="nav-item">
-                            <a href="../Services/service-AI.html" class="nav-links">
-                                Services
-                                <span class="dropdown-arrow material-icons">expand_more</span>
-                            </a>
-                            <div class="dropdown-menu services-dropdown">
-                                <div
-                                    class="dropdown-container">
-                                    <!-- Breadcrumb navigation for category switching -->
-                                    <div class="services-breadcrumb">
-                                        <a href="../Services/service-AI.html" class="breadcrumb-item active" data-category="ai">AI</a>
-                                        <span class="breadcrumb-separator">\</span>
-                                        <a href="../Services/QA-Manual.html" class="breadcrumb-item" data-category="qa">QA</a>
-                                    </div>
-
-                                    <!-- AI Content (Default) -->
-                                    <div class="services-content active" id="ai-content">
-                                        <div class="services-grid ai-grid">
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/Intelligent Testcare.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>Intelligent Testcare</h4>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Testing</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="../navbar.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <!-- Added Google Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <style>
+            .hero-banner-image {
+                margin-right: -35rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <nav class="navbar">
+                <div class="main-container-nav">
+                    <div class="navbar-wrapper">
+                        <a href="../index.html" class="nav-image-wrapper">
+                            <img src="../Icons/Logo.svg" alt="" class="nav-image">
+                        </a>
+                        <div
+                            class="nav-links-wrapper">
+                            <!-- Solutions Dropdown -->
+                            <div class="nav-item">
+                                <a href="../solutions/Web-testing.html" class="nav-links">
+                                    Solutions
+                                    <span class="dropdown-arrow material-icons">expand_more</span>
+                                </a>
+                                <div class="dropdown-menu solutions-dropdown">
+                                    <div class="dropdown-container">
+                                        <div class="dropdown-grid">
+                                            <a href="../solutions/Web-testing.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/web.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Web</h3>
                                                     <p>Smart test intelligence for reliable software quality</p>
                                                 </div>
                                             </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/Natural Language Test Authering.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>Natural Language Test Authoring</h4>
+                                            <a href="../solutions/Mobile-testing.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Mobile.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Mobile</h3>
                                                     <p>Write test cases as easily as plain English commands</p>
                                                 </div>
                                             </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/Quality Test Scripts.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>Quality Test Scripts</h4>
+                                            <a href="../solutions/api-testing.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/api.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>API</h3>
                                                     <p>Robust, accurate scripts built for real-world scenarios</p>
                                                 </div>
                                             </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/AI Powered Framework.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>AI Powered Framework Development</h4>
+                                            <a href="../solutions/desktop-testing.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/desktop.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Desktop</h3>
                                                     <p>AI-driven test frameworks that build themselves</p>
                                                 </div>
                                             </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/Adaptive Test Maintenance.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>Adaptive Test Maintenance</h4>
+                                            <a href="../solutions/Salesforce-testing.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Saksfor.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Salesforce</h3>
                                                     <p>Self-healing tests that evolve with your application</p>
                                                 </div>
                                             </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/Supports All Platforms.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>Supports All Platforms</h4>
+                                            <a href="../solutions/Database-testing.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Database.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Database</h3>
                                                     <p>Unified automation across web, mobile, desktop, and APIs</p>
                                                 </div>
                                             </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/Automate Without.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>Automate Without Requirement</h4>
-                                                    <p>Create automation even before requirements are defined</p>
-                                                </div>
-                                            </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/AI Powered Framework.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>AI Powered Test Optimisation</h4>
-                                                    <p>AI that improves coverage, speed, and stability</p>
-                                                </div>
-                                            </a>
-                                            <a href="../Services/service-AI.html" class="service-card">
-                                                <div class="service-icon"><img src="../Images/nav-images/Multi-Source Support.png" alt="" class="nav-images-logo"></div>
-                                                <div class="service-info">
-                                                    <h4>Multi-Source Support</h4>
-                                                    <p>Seamless testing from multiple data and system sources</p>
-                                                </div>
-                                            </a>
                                         </div>
                                     </div>
-
-                                    <!-- QA Content (Hidden by default) -->
+                                </div>
+                            </div>
+    
+                            <!-- Services Dropdown with breadcrumb navigation and nested QA structure -->
+                            <div class="nav-item">
+                                <a href="../Services/service-AI.html" class="nav-links">
+                                    Services
+                                    <span class="dropdown-arrow material-icons">expand_more</span>
+                                </a>
+                                <div class="dropdown-menu services-dropdown">
                                     <div
-                                        class="services-content" id="qa-content">
-                                        <!-- QA category selector - simple text links, not dropdown buttons -->
-                                        <div class="qa-selector">
-                                            <a href="../Services/QA-Manual.html" class="qa-option active" data-qa-type="manual">QA - Manual</a>
-                                            <a href="../Services/QA-Automation.html" class="qa-option" data-qa-type="automation">QA - Automation</a>
+                                        class="dropdown-container">
+                                        <!-- Breadcrumb navigation for category switching -->
+                                        <div class="services-breadcrumb">
+                                            <a href="../Services/service-AI.html" class="breadcrumb-item active" data-category="ai">AI</a>
+                                            <span class="breadcrumb-separator">\</span>
+                                            <a href="../Services/QA-Manual.html" class="breadcrumb-item" data-category="qa">QA</a>
                                         </div>
-
-                                        <!-- QA - Manual (Default/Active) -->
-                                        <div class="qa-manual-content active">
-                                            <div class="services-grid qa-grid">
-                                                <a href="../Services/QA-Manual.html" class="service-card">
-                                                    <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Functional Test Automation.png" alt="" class="nav-images-logo"></div>
+    
+                                        <!-- AI Content (Default) -->
+                                        <div class="services-content active" id="ai-content">
+                                            <div class="services-grid ai-grid">
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/Intelligent Testcare.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>Functional</h4>
+                                                        <h4>Intelligent Testcare</h4>
                                                         <p>Smart test intelligence for reliable software quality</p>
                                                     </div>
                                                 </a>
-                                                <a href="../Services/QA-Manual.html" class="service-card">
-                                                    <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Integration.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/Natural Language Test Authering.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>Integration</h4>
+                                                        <h4>Natural Language Test Authoring</h4>
                                                         <p>Write test cases as easily as plain English commands</p>
                                                     </div>
                                                 </a>
-                                                <a href="../Services/QA-Manual.html" class="service-card">
-                                                    <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Regression.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/Quality Test Scripts.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>Regression</h4>
+                                                        <h4>Quality Test Scripts</h4>
                                                         <p>Robust, accurate scripts built for real-world scenarios</p>
                                                     </div>
                                                 </a>
-                                                <a href="../Services/QA-Manual.html" class="service-card">
-                                                    <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Exploriatory.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/AI Powered Framework.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>Exploratory
-                                                        </h4>
+                                                        <h4>AI Powered Framework Development</h4>
                                                         <p>AI-driven test frameworks that build themselves</p>
                                                     </div>
                                                 </a>
-                                                <a href="../Services/QA-Manual.html" class="service-card">
-                                                    <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Smoke.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/Adaptive Test Maintenance.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>Smoke
-                                                        </h4>
+                                                        <h4>Adaptive Test Maintenance</h4>
                                                         <p>Self-healing tests that evolve with your application</p>
                                                     </div>
                                                 </a>
-                                                <a href="../Services/QA-Manual.html" class="service-card">
-                                                    <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/End-to-End.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/Supports All Platforms.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>End-to-End
-                                                        </h4>
+                                                        <h4>Supports All Platforms</h4>
                                                         <p>Unified automation across web, mobile, desktop, and APIs</p>
                                                     </div>
                                                 </a>
-                                                <a href="../Services/QA-Manual.html" class="service-card">
-                                                    <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/UAT.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/Automate Without.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>UAT
-                                                        </h4>
+                                                        <h4>Automate Without Requirement</h4>
                                                         <p>Create automation even before requirements are defined</p>
                                                     </div>
                                                 </a>
-                                            </div>
-                                        </div>
-
-                                        <!-- QA - Automation (Hidden by default) -->
-                                        <div class="qa-automation-content">
-                                            <div class="services-grid qa-grid">
-                                                <a href="../Services/QA-Automation.html" class="service-card">
-                                                    <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/UI Test Automation.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/AI Powered Framework.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>UI Test Automation</h4>
-                                                        <p>Smart test intelligence for reliable software quality</p>
+                                                        <h4>AI Powered Test Optimisation</h4>
+                                                        <p>AI that improves coverage, speed, and stability</p>
                                                     </div>
                                                 </a>
-                                                <a href="../Services/QA-Automation.html" class="service-card">
-                                                    <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/Functional Test Automation.png" alt="" class="nav-images-logo"></div>
+                                                <a href="../Services/service-AI.html" class="service-card">
+                                                    <div class="service-icon"><img src="../Images/nav-images/Multi-Source Support.png" alt="" class="nav-images-logo"></div>
                                                     <div class="service-info">
-                                                        <h4>Functional Test Automation</h4>
-                                                        <p>Write test cases as easily as plain English commands</p>
-                                                    </div>
-                                                </a>
-                                                <a href="../Services/QA-Automation.html" class="service-card">
-                                                    <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/Regression.png" alt="" class="nav-images-logo"></div>
-                                                    <div class="service-info">
-                                                        <h4>Regression</h4>
-                                                        <p>Robust, accurate scripts built for real-world scenarios</p>
-                                                    </div>
-                                                </a>
-                                                <a href="../Services/QA-Automation.html" class="service-card">
-                                                    <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/api.png" alt="" class="nav-images-logo"></div>
-                                                    <div class="service-info">
-                                                        <h4>API
-                                                        </h4>
-                                                        <p>AI-driven test frameworks that build themselves</p>
-                                                    </div>
-                                                </a>
-                                                <a href="../Services/QA-Automation.html" class="service-card">
-                                                    <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/Mobile.png" alt="" class="nav-images-logo"></div>
-                                                    <div class="service-info">
-                                                        <h4>Mobile
-                                                        </h4>
-                                                        <p>Self-healing tests that evolve with your application</p>
-                                                    </div>
-                                                </a>
-                                                <a href="../Services/QA-Automation.html" class="service-card">
-                                                    <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/desktop.png" alt="" class="nav-images-logo"></div>
-                                                    <div class="service-info">
-                                                        <h4>Desktop
-                                                        </h4>
-                                                        <p>Unified automation across web, mobile, desktop, and APIs</p>
+                                                        <h4>Multi-Source Support</h4>
+                                                        <p>Seamless testing from multiple data and system sources</p>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
+    
+                                        <!-- QA Content (Hidden by default) -->
+                                        <div
+                                            class="services-content" id="qa-content">
+                                            <!-- QA category selector - simple text links, not dropdown buttons -->
+                                            <div class="qa-selector">
+                                                <a href="../Services/QA-Manual.html" class="qa-option active" data-qa-type="manual">QA - Manual</a>
+                                                <a href="../Services/QA-Automation.html" class="qa-option" data-qa-type="automation">QA - Automation</a>
+                                            </div>
+    
+                                            <!-- QA - Manual (Default/Active) -->
+                                            <div class="qa-manual-content active">
+                                                <div class="services-grid qa-grid">
+                                                    <a href="../Services/QA-Manual.html" class="service-card">
+                                                        <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Functional Test Automation.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Functional</h4>
+                                                            <p>Smart test intelligence for reliable software quality</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Manual.html" class="service-card">
+                                                        <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Integration.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Integration</h4>
+                                                            <p>Write test cases as easily as plain English commands</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Manual.html" class="service-card">
+                                                        <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Regression.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Regression</h4>
+                                                            <p>Robust, accurate scripts built for real-world scenarios</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Manual.html" class="service-card">
+                                                        <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Exploriatory.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Exploratory
+                                                            </h4>
+                                                            <p>AI-driven test frameworks that build themselves</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Manual.html" class="service-card">
+                                                        <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/Smoke.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Smoke
+                                                            </h4>
+                                                            <p>Self-healing tests that evolve with your application</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Manual.html" class="service-card">
+                                                        <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/End-to-End.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>End-to-End
+                                                            </h4>
+                                                            <p>Unified automation across web, mobile, desktop, and APIs</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Manual.html" class="service-card">
+                                                        <div class="service-icon qa-manual-icon"><img src="../Images/nav-images/UAT.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>UAT
+                                                            </h4>
+                                                            <p>Create automation even before requirements are defined</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+    
+                                            <!-- QA - Automation (Hidden by default) -->
+                                            <div class="qa-automation-content">
+                                                <div class="services-grid qa-grid">
+                                                    <a href="../Services/QA-Automation.html" class="service-card">
+                                                        <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/UI Test Automation.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>UI Test Automation</h4>
+                                                            <p>Smart test intelligence for reliable software quality</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Automation.html" class="service-card">
+                                                        <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/Functional Test Automation.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Functional Test Automation</h4>
+                                                            <p>Write test cases as easily as plain English commands</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Automation.html" class="service-card">
+                                                        <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/Regression.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Regression</h4>
+                                                            <p>Robust, accurate scripts built for real-world scenarios</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Automation.html" class="service-card">
+                                                        <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/api.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>API
+                                                            </h4>
+                                                            <p>AI-driven test frameworks that build themselves</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Automation.html" class="service-card">
+                                                        <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/Mobile.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Mobile
+                                                            </h4>
+                                                            <p>Self-healing tests that evolve with your application</p>
+                                                        </div>
+                                                    </a>
+                                                    <a href="../Services/QA-Automation.html" class="service-card">
+                                                        <div class="service-icon qa-automation-icon"><img src="../Images/nav-images/desktop.png" alt="" class="nav-images-logo"></div>
+                                                        <div class="service-info">
+                                                            <h4>Desktop
+                                                            </h4>
+                                                            <p>Unified automation across web, mobile, desktop, and APIs</p>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Why Partner Dropdown -->
-                        <div class="nav-item">
-                            <a href="../why-us.html" class="nav-links">
-                                Why Partner With SYSLATECH
-                                <span class="dropdown-arrow material-icons">expand_more</span>
-                            </a>
-                            <div class="dropdown-menu partner-dropdown">
-                                <div class="dropdown-container">
-                                    <div class="dropdown-grid cols-2">
-                                        <a href="../Why-Partner/Experts-in-AI-Tools.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Experts in AI Tools.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Experts in AI Tools</h3>
-                                                <p>Smart test intelligence for reliable software quality</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Why-Partner/Industries-we-serve.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Industries We Serve.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Industries We Serve</h3>
-                                                <p>Write test cases as easily as plain English commands</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Why-Partner/Customised-solutions.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Customised Solutions.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Customised Solutions</h3>
-                                                <p>Robust, accurate scripts built for real-world scenarios</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Why-Partner/Expert-QA-team.html" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Expert QA TEam.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Expert QA Team</h3>
-                                                <p>AI-driven test frameworks that build themselves</p>
-                                            </div>
-                                        </a>
+    
+                            <!-- Why Partner Dropdown -->
+                            <div class="nav-item">
+                                <a href="../why-us.html" class="nav-links">
+                                    Why Partner With SYSLATECH
+                                    <span class="dropdown-arrow material-icons">expand_more</span>
+                                </a>
+                                <div class="dropdown-menu partner-dropdown">
+                                    <div class="dropdown-container">
+                                        <div class="dropdown-grid cols-2">
+                                            <a href="../Why-Partner/Experts-in-AI-Tools.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Experts in AI Tools.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Experts in AI Tools</h3>
+                                                    <p>Smart test intelligence for reliable software quality</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Why-Partner/Industries-we-serve.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Industries We Serve.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Industries We Serve</h3>
+                                                    <p>Write test cases as easily as plain English commands</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Why-Partner/Customised-solutions.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Customised Solutions.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Customised Solutions</h3>
+                                                    <p>Robust, accurate scripts built for real-world scenarios</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Why-Partner/Expert-QA-team.html" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Expert QA TEam.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Expert QA Team</h3>
+                                                    <p>AI-driven test frameworks that build themselves</p>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Tools & Tech Dropdown -->
-                        <div class="nav-item">
-                            <a href="../Tools&Tech.html" class="nav-links">
-                                Tools & Tech
-                                <span class="dropdown-arrow material-icons">expand_more</span>
-                            </a>
-                            <div class="dropdown-menu tools-dropdown">
-                                <div class="dropdown-container">
-                                    <div class="dropdown-grid cols-2">
-                                        <a href="../Tools&Tech.html#selenium" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Selenium.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Selenium</h3>
-                                                <p>Smart test intelligence for reliable software quality</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Tools&Tech.html#TESTSIGMA" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Katalon Studio.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Katalon Studio</h3>
-                                                <p>Write test cases as easily as plain English commands</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Tools&Tech.html#PLAYWRITE" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Testigma.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Testigma</h3>
-                                                <p>Robust, accurate scripts built for real-world scenarios</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Tools&Tech.html#TRICENTIS" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Tricentis Tosca.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Tricentis Tosca</h3>
-                                                <p>AI-driven test frameworks that build themselves</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Tools&Tech.html#KATALON" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Playwrite.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Playwrite</h3>
-                                                <p>Self-healing tests that evolve with your application</p>
-                                            </div>
-                                        </a>
-                                        <a href="../Tools&Tech.html#CYPRESS" class="dropdown-item">
-                                            <div class="dropdown-icon"><img src="../Images/nav-images/Cypress.png" alt="" class="nav-images-logo"></div>
-                                            <div class="dropdown-content">
-                                                <h3>Cypress</h3>
-                                                <p>Unified automation across web, mobile, desktop, and APIs</p>
-                                            </div>
-                                        </a>
+    
+                            <!-- Tools & Tech Dropdown -->
+                            <div class="nav-item">
+                                <a href="../Tools&Tech.html" class="nav-links">
+                                    Tools & Tech
+                                    <span class="dropdown-arrow material-icons">expand_more</span>
+                                </a>
+                                <div class="dropdown-menu tools-dropdown">
+                                    <div class="dropdown-container">
+                                        <div class="dropdown-grid cols-2">
+                                            <a href="../Tools&Tech.html#TESTSIGMA" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Testigma.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Testsigma</h3>
+                                                    <p>Robust, accurate scripts built for real-world scenarios</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Tools&Tech.html#selenium" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Selenium.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Selenium</h3>
+                                                    <p>Smart test intelligence for reliable software quality</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Tools&Tech.html#PLAYWRITE" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Playwrite.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Playwright</h3>
+                                                    <p>Self-healing tests that evolve with your application</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Tools&Tech.html#KATALON" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Katalon Studio.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Katalon Studio</h3>
+                                                    <p>Write test cases as easily as plain English commands</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Tools&Tech.html#TRICENTIS" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Tricentis Tosca.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Tricentis Tosca</h3>
+                                                    <p>AI-driven test frameworks that build themselves</p>
+                                                </div>
+                                            </a>
+                                            <a href="../Tools&Tech.html#CYPRESS" class="dropdown-item">
+                                                <div class="dropdown-icon"><img src="../Images/nav-images/Cypress.png" alt="" class="nav-images-logo"></div>
+                                                <div class="dropdown-content">
+                                                    <h3>Cypress</h3>
+                                                    <p>Unified automation across web, mobile, desktop, and APIs</p>
+                                                </div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+    
+                            <!-- Blogs Link -->
+                            <a href="../blogs.html" class="nav-links">Blogs</a>
+    
+                            <!-- Contact Us Button -->
+    
                         </div>
-
-                        <!-- Blogs Link -->
-                        <a href="../blogs.html" class="nav-links">Blogs</a>
-
-                        <!-- Contact Us Button -->
-
+                        <a href="../contact.html" class="nav-btn-wrapper">Contact Us</a>
+    
+                        <!-- Add hamburger menu button -->
+                        <button class="hamburger-menu" id="hamburgerBtn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
                     </div>
-                    <a href="../contact.html" class="nav-btn-wrapper">Contact Us</a>
-
-                    <!-- Add hamburger menu button -->
-                    <button class="hamburger-menu" id="hamburgerBtn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
                 </div>
-            </div>
-
-            <!-- Add mobile menu overlay -->
-            <div class="mobile-menu" id="mobileMenu">
-                <div
-                    class="mobile-menu-items">
-                    <!-- Solutions Dropdown -->
-                    <div class="mobile-menu-item" data-menu="solutions">
-                        <div class="mobile-menu-item-label">
-                            <a href="../solutions/Web-testing.html">Solutions</a>
-                            <span class="material-icons mobile-menu-chevron">expand_more</span>
-                        </div>
-                        <div class="mobile-menu-submenu">
-                            <a href="../solutions/Web-testing.html" class="mobile-submenu-item">Web</a>
-                            <a href="../solutions/Mobile-testing.html" class="mobile-submenu-item">Mobile</a>
-                            <a href="../solutions/api-testing.html" class="mobile-submenu-item">API</a>
-                            <a href="../solutions/desktop-testing.html" class="mobile-submenu-item">Desktop</a>
-                            <a href="../solutions/Salesforce-testing.html" class="mobile-submenu-item">Salesforce</a>
-                            <a href="../solutions/Database-testing.html" class="mobile-submenu-item">Database</a>
-                        </div>
-                    </div>
-
-                    <!-- Services Dropdown - Multi-level -->
-                    <div class="mobile-menu-item" data-menu="services">
-                        <div class="mobile-menu-item-label">
-                            <a href="../Services/service-AI.html">Services</a>
-                            <span class="material-icons mobile-menu-chevron">expand_more</span>
-                        </div>
-                        <div
-                            class="mobile-menu-submenu">
-                            <!-- AI Items -->
-                            <div class="mobile-submenu-item has-submenu" data-submenu="ai">
-                                <a href="../Services/service-AI.html">AI</a>
-                                <span class="material-icons mobile-submenu-chevron">expand_more</span>
+    
+                <!-- Add mobile menu overlay -->
+                <div class="mobile-menu" id="mobileMenu">
+                    <div
+                        class="mobile-menu-items">
+                        <!-- Solutions Dropdown -->
+                        <div class="mobile-menu-item" data-menu="solutions">
+                            <div class="mobile-menu-item-label">
+                                <a href="../solutions/Web-testing.html">Solutions</a>
+                                <span class="material-icons mobile-menu-chevron">expand_more</span>
                             </div>
-                            <div class="mobile-submenu-nested">
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">Intelligent Testcare General</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">Quality Test Scripts</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">Natural Language Test Authoring</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">AI Powered Framework Development</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">Adaptive Test Maintenance</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">Supports All Platforms</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">Multi-Source Support</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">Automate Without Requirement</a>
-                                </div>
-
-                                <div class="mobile-nested-item">
-                                    <a href="../Services/service-AI.html">AI Powered Test Optimisation</a>
-                                </div>
-
+                            <div class="mobile-menu-submenu">
+                                <a href="../solutions/Web-testing.html" class="mobile-submenu-item">Web</a>
+                                <a href="../solutions/Mobile-testing.html" class="mobile-submenu-item">Mobile</a>
+                                <a href="../solutions/api-testing.html" class="mobile-submenu-item">API</a>
+                                <a href="../solutions/desktop-testing.html" class="mobile-submenu-item">Desktop</a>
+                                <a href="../solutions/Salesforce-testing.html" class="mobile-submenu-item">Salesforce</a>
+                                <a href="../solutions/Database-testing.html" class="mobile-submenu-item">Database</a>
                             </div>
-
-
-                            <div class="mobile-submenu-group">
-                                <div class="mobile-submenu-item has-submenu">
-                                    <a href="../Services/QA-Manual.html">QA</a>
+                        </div>
+    
+                        <!-- Services Dropdown - Multi-level -->
+                        <div class="mobile-menu-item" data-menu="services">
+                            <div class="mobile-menu-item-label">
+                                <a href="../Services/service-AI.html">Services</a>
+                                <span class="material-icons mobile-menu-chevron">expand_more</span>
+                            </div>
+                            <div
+                                class="mobile-menu-submenu">
+                                <!-- AI Items -->
+                                <div class="mobile-submenu-item has-submenu" data-submenu="ai">
+                                    <a href="../Services/service-AI.html">AI</a>
                                     <span class="material-icons mobile-submenu-chevron">expand_more</span>
                                 </div>
-                                <div
-                                    class="mobile-submenu-nested">
-                                    <!-- QA Manual -->
-                                    <div class="mobile-submenu-group">
-                                        <div class="mobile-submenu-item has-submenu">
-                                            <a href="../Services/QA-Manual.html">QA - Manual</a>
-                                            <span class="material-icons mobile-submenu-chevron">expand_more</span>
+                                <div class="mobile-submenu-nested">
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">Intelligent Testcare General</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">Quality Test Scripts</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">Natural Language Test Authoring</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">AI Powered Framework Development</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">Adaptive Test Maintenance</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">Supports All Platforms</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">Multi-Source Support</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">Automate Without Requirement</a>
+                                    </div>
+    
+                                    <div class="mobile-nested-item">
+                                        <a href="../Services/service-AI.html">AI Powered Test Optimisation</a>
+                                    </div>
+    
+                                </div>
+    
+    
+                                <div class="mobile-submenu-group">
+                                    <div class="mobile-submenu-item has-submenu">
+                                        <a href="../Services/QA-Manual.html">QA</a>
+                                        <span class="material-icons mobile-submenu-chevron">expand_more</span>
+                                    </div>
+                                    <div
+                                        class="mobile-submenu-nested">
+                                        <!-- QA Manual -->
+                                        <div class="mobile-submenu-group">
+                                            <div class="mobile-submenu-item has-submenu">
+                                                <a href="../Services/QA-Manual.html">QA - Manual</a>
+                                                <span class="material-icons mobile-submenu-chevron">expand_more</span>
+                                            </div>
+                                            <div class="mobile-submenu-nested">
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Manual.html">Functional</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Manual.html">Integration</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Manual.html">Regression</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Manual.html">Exploratory</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Manual.html">Smoke</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Manual.html">End-to-End</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Manual.html">UAT</a>
+                                                </div>
+    
+                                            </div>
+    
                                         </div>
-                                        <div class="mobile-submenu-nested">
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Manual.html">Functional</a>
+    
+                                        <!-- QA Automation -->
+                                        <div class="mobile-submenu-group">
+                                            <div class="mobile-submenu-item has-submenu">
+                                                <a href="../Services/QA-Automation.html">QA - Automation</a>
+                                                <span class="material-icons mobile-submenu-chevron">expand_more</span>
                                             </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Manual.html">Integration</a>
+                                            <div class="mobile-submenu-nested">
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Automation.html">UI Test Automation</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Automation.html">Functional Test Automation</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Automation.html">Regression</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Automation.html">API</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Automation.html">Mobile</a>
+                                                </div>
+    
+                                                <div class="mobile-nested-item">
+                                                    <a href="../Services/QA-Automation.html">Desktop</a>
+                                                </div>
+    
                                             </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Manual.html">Regression</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Manual.html">Exploratory</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Manual.html">Smoke</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Manual.html">End-to-End</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Manual.html">UAT</a>
-                                            </div>
-
+    
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <!-- Why Partner With SYSLATECH Dropdown -->
+                        <div class="mobile-menu-item" data-menu="why-partner">
+                            <div class="mobile-menu-item-label">
+                                <a href="../why-us.html">Why Partner With SYSLATECH</a>
+                                <span class="material-icons mobile-menu-chevron">expand_more</span>
+                            </div>
+                            <div class="mobile-menu-submenu">
+                                <a href="../Why-Partner/Experts-in-AI-Tools.html" class="mobile-submenu-item">Experts in AI Tools</a>
+                                <a href="../Why-Partner/Industries-we-serve.html" class="mobile-submenu-item">Industries We Serve</a>
+                                <a href="../Why-Partner/Customised-solutions.html" class="mobile-submenu-item">Customised Solutions</a>
+                                <a href="../Why-Partner/Expert-QA-team.html" class="mobile-submenu-item">Expert QA Team</a>
+                            </div>
+                        </div>
+    
+                        <!-- Tools & Tech Dropdown -->
+                        <div class="mobile-menu-item" data-menu="tools">
+                            <div class="mobile-menu-item-label">
+                                <a href="../Tools&Tech.html">Tools & Tech</a>
+                                <span class="material-icons mobile-menu-chevron">expand_more</span>
+                            </div>
+                            <div class="mobile-menu-submenu">
+                                <a href="../Tools&Tech.html#Selenium" class="mobile-submenu-item">Selenium</a>
+                                <a href="../Tools&Tech.html#TESTSIGMA" class="mobile-submenu-item">Katalon Studio</a>
+                                <a href="../Tools&Tech.html#PLAYWRITE" class="mobile-submenu-item">Testsigma</a>
+                                <a href="../Tools&Tech.html#TRICENTIS" class="mobile-submenu-item">Tricentis Tosca</a>
+                                <a href="../Tools&Tech.html#KATALON" class="mobile-submenu-item">Playwright</a>
+                                <a href="../Tools&Tech.html#CYPRESS" class="mobile-submenu-item">Cypress</a>
+                            </div>
+                        </div>
+    
+                        <!-- Blogs Link (Direct) -->
+                        <div class="mobile-menu-item">
+                            <a href="../blogs.html" class="mobile-menu-item-label">Blogs</a>
+                        </div>
+    
+                        <!-- Contact Us Link (Direct) -->
+                        <div class="mobile-menu-item">
+                            <a href="../contact.html" class="mobile-menu-item-label">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <section class="hero-section">
+                <div class="main-container">
+                    <div class="hero-section-wrapper">
+                        <div class="hero-content-wrapper">
+                            <img src="../Images/Logo.png" alt="" class="hero-logo">
+                            <h1 class="hero-title"><br><span>
+                                    Ensuring Flawless Performance Across Every Browser</span>
+                            </h1>
+                            <a href="../contact.html" class="hero-btn">Request a Web Testing Assessment</a>
+                        </div>
+                        <img src="../Images/web-bg.png" alt="" class="hero-banner-image">
+                    </div>
+                </div>
+                <!-- <div class="second-bg"></div> -->
+                <div class="bg-gradent"></div>
+                <div class="bg-gradent-right"></div>
+                <img src="../Icons/section-bottom-vector.svg" alt="section bottom vector" class="section-bottom-vector-hero">
+            </section>
+            <section class="solutions-about-section">
+                <div class="main-container">
+                    <div class="solutions-about-section-wrapper">
+                        <div class="solution-about-line-wrapper">
+                            <div class="solutions-about-content-wrapper">
+                                <h2 class="soutions-about-content-title">THE CHALLENGE</h2>
+                                <p class="solutions-about-content-para">Web applications must function seamlessly in a fragmented digital ecosystem. Browser inconsistencies, performance bottlenecks, and security vulnerabilities can break user trust and impact conversions.</p>
+                            </div>
+                            <div class="solutions-about-image-wrapper">
+                                <img src="../Images/solutions-about-image1.png" alt="" class="solutions-about-image">
+                            </div>
+                        </div>
+                        <div class="solution-about-line-wrapper flex-reverse">
+                            <div class="solutions-about-content-wrapper">
+                                <h2 class="soutions-about-content-title">Our Solution</h2>
+                                <p class="solutions-about-content-para">We deliver end-to-end web testing that validates functionality and usability, resulting in reliable user experiences across all environments.</p>
+                            </div>
+                            <div class="solutions-about-image-wrapper">
+                                <img src="../Images/web-solutions.jpg" alt="" class="solutions-about-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="solutions-section">
+                <div class="main-container">
+                    <div class="solutions-container">
+                        <div class="solutions-header">
+                            <h1>
+                                WHAT WE TEST
+                                <span class="solutions-question-mark">?</span>
+                            </h1>
+                        </div>
 
+                        <div class="solutions-cards-container">
+                            <div class="solutions-card">
+                                <div class="solutions-card-icon icon-globe">
+                                    <img src="../Images/web testing.svg" alt="" class="solution-card-icons">
+                                </div>
+                                <div class="solutions-card-title">Cross-Browser<br>Compatibility</div>
+                                <div class="solutions-card-description">Chrome, Firefox, Safari, Edge</div>
+                            </div>
+
+                            <div class="solutions-card">
+                                <div class="solutions-card-icon icon-responsive">
+                                    <img src="../Images/mobile test.svg" alt="" class="solution-card-icons">
+                                </div>
+                                <div class="solutions-card-title">Responsive UI</div>
+                                <div class="solutions-card-description">Mobile, tablet, & desktop views</div>
+                            </div>
+
+                            <div class="solutions-card">
+                                <div class="solutions-card-icon icon-workflow">
+                                    <img src="../Images/api testing.svg" alt="" class="solution-card-icons">
+                                </div>
+                                <div class="solutions-card-title">Functional<br>Workflows</div>
+                                <div class="solutions-card-description">Business-critical scenarios</div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="solutions-cards-container-bottom">
+                            <div class="solutions-card">
+                                <div class="solutions-card-icon icon-performance">
+                                    <img src="../Icons/performance.svg" alt="" class="solution-card-icons">
+                                </div>
+                                <div class="solutions-card-title">Performance<br>& Load</div>
+                                <div class="solutions-card-description">Speed under peak traffic</div>
+                            </div>
+
+                            <div class="solutions-card">
+                                <div class="solutions-card-icon icon-security">
+                                    <img src="../Icons/security.svg" alt="" class="solution-card-icons">
+                                </div>
+                                <div class="solutions-card-title">Security<br>Vulnerabilities</div>
+                                <div class="solutions-card-description">Threat and risk assessment</div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+            <section class="our-approuch-section">
+                <div class="main-container">
+                    <div class="our-approuch-section-wrapper">
+                        <div class="our-approuch-wrapper">
+                            <h2 class="our-approuch-title">OUR APPROACH</h2>
+                            <h5 class="our-approuch-description">By combining intelligent automation with expert manual testing, we detect defects early, reduce rework, and accelerate releases.</h5>
+                        </div>
+                        <div class="business-impact-wrapper">
+                            <h2 class="our-approuch-title">Business Impact</h2>
+                            <div class="features">
+                                <div class="feature-box">
+                                    <div class="feature-item">
+                                        <span class="icon"><img src="../Icons/bussiness-icons1.svg" alt=""></span>
+                                        <p>Consistent user experience</p>
                                     </div>
 
-                                    <!-- QA Automation -->
-                                    <div class="mobile-submenu-group">
-                                        <div class="mobile-submenu-item has-submenu">
-                                            <a href="../Services/QA-Automation.html">QA - Automation</a>
-                                            <span class="material-icons mobile-submenu-chevron">expand_more</span>
-                                        </div>
-                                        <div class="mobile-submenu-nested">
+                                    <div class="feature-item">
+                                        <span class="icon"><img src="../Icons/bussiness-icons2.svg" alt=""></span>
+                                        <p>Reduced production issues</p>
+                                    </div>
 
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Automation.html">UI Test Automation</a>
-                                            </div>
+                                    <div class="feature-item">
+                                        <span class="icon"><img src="../Icons/bussiness-icons3.svg" alt=""></span>
+                                        <p>Faster time-to-market</p>
+                                    </div>
 
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Automation.html">Functional Test Automation</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Automation.html">Regression</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Automation.html">API</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Automation.html">Mobile</a>
-                                            </div>
-
-                                            <div class="mobile-nested-item">
-                                                <a href="../Services/QA-Automation.html">Desktop</a>
-                                            </div>
-
-                                        </div>
-
+                                    <div class="feature-item">
+                                        <span class="icon"><img src="../Icons/bussiness-icons4.svg" alt=""></span>
+                                        <p>Improved customer satisfaction</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Why Partner With SYSLATECH Dropdown -->
-                    <div class="mobile-menu-item" data-menu="why-partner">
-                        <div class="mobile-menu-item-label">
-                            <a href="../why-us.html">Why Partner With SYSLATECH</a>
-                            <span class="material-icons mobile-menu-chevron">expand_more</span>
-                        </div>
-                        <div class="mobile-menu-submenu">
-                            <a href="../Why-Partner/Experts-in-AI-Tools.html" class="mobile-submenu-item">Experts in AI Tools</a>
-                            <a href="../Why-Partner/Industries-we-serve.html" class="mobile-submenu-item">Industries We Serve</a>
-                            <a href="../Why-Partner/Customised-solutions.html" class="mobile-submenu-item">Customised Solutions</a>
-                            <a href="../Why-Partner/Expert-QA-team.html" class="mobile-submenu-item">Expert QA Team</a>
-                        </div>
-                    </div>
-
-                    <!-- Tools & Tech Dropdown -->
-                    <div class="mobile-menu-item" data-menu="tools">
-                        <div class="mobile-menu-item-label">
-                            <a href="../Tools&Tech.html">Tools & Tech</a>
-                            <span class="material-icons mobile-menu-chevron">expand_more</span>
-                        </div>
-                        <div class="mobile-menu-submenu">
-                            <a href="../Tools&Tech.html#Selenium" class="mobile-submenu-item">Selenium</a>
-                            <a href="../Tools&Tech.html#TESTSIGMA" class="mobile-submenu-item">Katalon Studio</a>
-                            <a href="../Tools&Tech.html#PLAYWRITE" class="mobile-submenu-item">Testsigma</a>
-                            <a href="../Tools&Tech.html#TRICENTIS" class="mobile-submenu-item">Tricentis Tosca</a>
-                            <a href="../Tools&Tech.html#KATALON" class="mobile-submenu-item">Playwright</a>
-                            <a href="../Tools&Tech.html#CYPRESS" class="mobile-submenu-item">Cypress</a>
-                        </div>
-                    </div>
-
-                    <!-- Blogs Link (Direct) -->
-                    <div class="mobile-menu-item">
-                        <a href="../blogs.html" class="mobile-menu-item-label">Blogs</a>
-                    </div>
-
-                    <!-- Contact Us Link (Direct) -->
-                    <div class="mobile-menu-item">
-                        <a href="../contact.html" class="mobile-menu-item-label">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-        <section class="hero-section">
-            <div class="main-container">
-                <div class="hero-section-wrapper">
-                    <div class="hero-content-wrapper">
-                        <img src="../Images/Logo.png" alt="" class="hero-logo">
-                        <h1 class="hero-title"><br><span> Ensuring Flawless Performance Across Every Browser</span></h1>
-                        <a href="" class="hero-btn">Request a Web Testing Assessment</a>
-                    </div>
-                    <img src="../Images/web-bg.png" alt="" class="hero-banner-image">
-                </div>
-            </div>
-            <!-- <div class="second-bg"></div> -->
-            <div class="bg-gradent"></div>
-            <div class="bg-gradent-right"></div>
-            <img src="../Icons/section-bottom-vector.svg" alt="section bottom vector" class="section-bottom-vector-hero">
-        </section>
-        <section class="solutions-about-section">
-            <div class="main-container">
-                <div class="solutions-about-section-wrapper">
-                    <div class="solution-about-line-wrapper">
-                        <div class="solutions-about-content-wrapper">
-                            <h2 class="soutions-about-content-title">THE CHALLENGE</h2>
-                            <p class="solutions-about-content-para">Web applications must function seamlessly in a fragmented digital ecosystem. Browser inconsistencies, performance bottlenecks, and security vulnerabilities can break user trust and impact conversions.</p>
-                        </div>
-                        <div class="solutions-about-image-wrapper">
-                            <img src="../Images/solutions-about-image1.png" alt="" class="solutions-about-image">
-                        </div>
-                    </div>
-                    <div class="solution-about-line-wrapper flex-reverse">
-                        <div class="solutions-about-content-wrapper">
-                            <h2 class="soutions-about-content-title">Our Solution</h2>
-                            <p class="solutions-about-content-para">We deliver end-to-end web testing that validates functionality, usability, performance, and security—ensuring reliable user experiences across all environments.</p>
-                        </div>
-                        <div class="solutions-about-image-wrapper">
-                            <img src="../Images/web-solutions.jpg" alt="" class="solutions-about-image">
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="solutions-section">
-            <div class="main-container">
-                <div class="solutions-container">
-                    <div class="solutions-header">
-                        <h1>
-                            WHAT WE TEST
-                            <span class="solutions-question-mark">?</span>
-                        </h1>
-                    </div>
-
-                    <div class="solutions-cards-container">
-                        <div class="solutions-card">
-                            <div class="solutions-card-icon icon-globe">
-                                <img src="../Images/web testing.svg" alt="" class="solution-card-icons">
-                            </div>
-                            <div class="solutions-card-title">Cross-Browser<br>Compatibility</div>
-                            <div class="solutions-card-description">Chrome, Firefox, Safari, Edge</div>
-                        </div>
-
-                        <div class="solutions-card">
-                            <div class="solutions-card-icon icon-responsive">
-                                <img src="../Images/mobile test.svg" alt="" class="solution-card-icons">
-                            </div>
-                            <div class="solutions-card-title">Responsive UI</div>
-                            <div class="solutions-card-description">Mobile, tablet, & desktop views</div>
-                        </div>
-
-                        <div class="solutions-card">
-                            <div class="solutions-card-icon icon-workflow">
-                                <img src="../Images/api testing.svg" alt="" class="solution-card-icons">
-                            </div>
-                            <div class="solutions-card-title">Functional<br>Workflows</div>
-                            <div class="solutions-card-description">Business-critical scenarios</div>
-                        </div>
-                    </div>
-
-                    <div class="solutions-cards-container-bottom">
-                        <div class="solutions-card">
-                            <div class="solutions-card-icon icon-performance">
-                                <img src="../Icons/performance.svg" alt="" class="solution-card-icons">
-                            </div>
-                            <div class="solutions-card-title">Performance<br>& Load</div>
-                            <div class="solutions-card-description">Speed under peak traffic</div>
-                        </div>
-
-                        <div class="solutions-card">
-                            <div class="solutions-card-icon icon-security">
-                                <img src="../Icons/security.svg" alt="" class="solution-card-icons">
-                            </div>
-                            <div class="solutions-card-title">Security<br>Vulnerabilities</div>
-                            <div class="solutions-card-description">Threat and risk assessment</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="our-approuch-section">
-            <div class="main-container">
-                <div class="our-approuch-section-wrapper">
-                    <div class="our-approuch-wrapper">
-                        <h2 class="our-approuch-title">OUR APPROACH</h2>
-                        <h5 class="our-approuch-description">By combining intelligent automation with expert manual testing, we detect defects early, reduce rework, and accelerate releases.</h5>
-                    </div>
-                    <div class="business-impact-wrapper">
-                        <h2 class="our-approuch-title">Business Impact</h2>
-                        <div class="features">
-                            <div class="feature-box">
-                              <div class="feature-item">
-                                <span class="icon"><img src="../Icons/bussiness-icons1.svg" alt=""></span>
-                                <p>Consistent user experience</p>
-                              </div>
-                          
-                              <div class="feature-item">
-                                <span class="icon"><img src="../Icons/bussiness-icons2.svg" alt=""></span>
-                                <p>Reduced production issues</p>
-                              </div>
-                          
-                              <div class="feature-item">
-                                <span class="icon"><img src="../Icons/bussiness-icons3.svg" alt=""></span>
-                                <p>Faster time-to-market</p>
-                              </div>
-                          
-                              <div class="feature-item">
-                                <span class="icon"><img src="../Icons/bussiness-icons4.svg" alt=""></span>
-                                <p>Improved customer satisfaction</p>
-                              </div>
-                            </div>
-                        </div>
-                          
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer class="footer-section">
-            <div class="main-container">
-                <div class="footer-wrapper">
-                    <div class="footer-top-wrapper">
-                        <a href="../index.html">
-                            <img src="../Images/Logo.png" alt="" class="footer-logo">
-                        </a>
-                        <div class="links-wrapper">
-                            <div class="footer-links-wrapper">
-                                <h2 class="links-title">Quick Links</h2>
-                                <div class="footer-links">
-                                    <a href="../index.html" class="footer-link"><span>></span> Home</a>
-                                    <a href="../Services/service-AI.html" class="footer-link"><span>></span> Services</a>
-                                    <a href="../about.html" class="footer-link"><span>></span> About Us</a>
-                                    <!-- <a href="#" class="footer-link"><span>></span> Case Study</a> -->
-                                    <a href="../contact.html" class="footer-link"><span>></span> Contact Us</a>
-                                </div>
-                            </div>
-                            <div class="footer-links-wrapper">
-                                <h2 class="links-title">Contact Us</h2>
-                                <div class="footer-links">
-                                    <a href="#" class="footer-link"><img src="../Icons/location-white.svg" alt="" class="footer-icon"> Bangalore, Karnataka, India</a>
-                                    <a href="#" class="footer-link"><img src="../Icons/email-white.svg" alt="" class="footer-icon"> chandu@syslatech.com</a>
-                                    <a href="#" class="footer-link"><img src="../Icons/phone-white.svg" alt="" class="footer-icon"> +91 9986055536</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-form-wrapper">
-                            <div class="footer-form-title-wrapper">
-                                <h2 class="footer-form-title">CONTACT US</h2>
-                                <!-- <p class="footer-form-para">Subscribe with Email and loads of interesting news will be sent to you on a daily basis.</p> -->
-                            </div>
-                            <form class="form-container footer-form" id="footerForm">
-                                <div class="form-group">
-                                    <input type="text" name="name" placeholder="Full Name" required>
-                                </div>
-                                <div class="form-group mobile-group">
-                                    <div class="country-code-box">
-                                        <select name="countryCode">
-                                            <option class="country-code-dropdown" value="+91" selected>+91 IN</option>
-                                            <option class="country-code-dropdown" value="+1">+1 US</option>
-                                            <option class="country-code-dropdown" value="+44">+44 UK</option>
-                                            <option class="country-code-dropdown" value="+971">+971 UAE</option>
-                                        </select>
+            </section>
+            <footer class="footer-section">
+                <div class="main-container">
+                    <div class="footer-wrapper">
+                        <div class="footer-top-wrapper">
+                            <a href="../index.html">
+                                <img src="../Images/Logo.png" alt="" class="footer-logo">
+                            </a>
+                            <div class="links-wrapper">
+                                <div class="footer-links-wrapper">
+                                    <h2 class="links-title">Quick Links</h2>
+                                    <div class="footer-links">
+                                        <a href="../index.html" class="footer-link">
+                                            <span>></span>
+                                            Home</a>
+                                        <a href="../Services/service-AI.html" class="footer-link">
+                                            <span>></span>
+                                            Services</a>
+                                        <a href="../about.html" class="footer-link">
+                                            <span>></span>
+                                            About Us</a>
+                                        <!-- <a href="#" class="footer-link"><span>></span> Case Study</a> -->
+                                        <a href="../contact.html" class="footer-link">
+                                            <span>></span>
+                                            Contact Us</a>
                                     </div>
-                                
-                                    <input 
-                                        type="tel" 
-                                        name="mobile" 
-                                        placeholder="Enter your phone number" 
-                                        maxlength="10" 
-                                        required
-                                    >
                                 </div>
-                                
-                            
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Your email here" required>
+                                <div class="footer-links-wrapper">
+                                    <h2 class="links-title">Contact Us</h2>
+                                    <div class="footer-links">
+                                        <a href="#" class="footer-link"><img src="../Icons/location-white.svg" alt="" class="footer-icon">
+                                            Bangalore, Karnataka, India</a>
+                                        <a href="#" class="footer-link"><img src="../Icons/email-white.svg" alt="" class="footer-icon">
+                                            chandu@syslatech.com</a>
+                                        <a href="#" class="footer-link"><img src="../Icons/phone-white.svg" alt="" class="footer-icon">
+                                            +91 9986055536</a>
+                                    </div>
                                 </div>
-                            
-                                <button class="submit-btn" type="submit">
-                                    Submit
-                                </button>
-                            
-                                <p id="footerSuccessMsg" style="display:none; margin-top:8px; color:#4CAF50;">
-                                    Submitted successfully!
-                                </p>
-                            </form>
+                            </div>
+                            <div class="footer-form-wrapper">
+                                <div class="footer-form-title-wrapper">
+                                    <h2 class="footer-form-title">CONTACT US</h2>
+                                    <!-- <p class="footer-form-para">Subscribe with Email and loads of interesting news will be sent to you on a daily basis.</p> -->
+                                </div>
+                                <form class="form-container footer-form" id="footerForm">
+                                    <div class="form-group">
+                                        <input type="text" name="name" placeholder="Full Name" required>
+                                    </div>
+                                    <div class="form-group mobile-group">
+                                        <div class="country-code-box">
+                                            <select name="countryCode">
+                                                <option class="country-code-dropdown" value="+91" selected>+91 IN</option>
+                                                <option class="country-code-dropdown" value="+1">+1 US</option>
+                                                <option class="country-code-dropdown" value="+44">+44 UK</option>
+                                                <option class="country-code-dropdown" value="+971">+971 UAE</option>
+                                            </select>
+                                        </div>
+
+                                        <input type="tel" name="mobile" placeholder="Enter your phone number" maxlength="10" required>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <input type="email" name="email" placeholder="Your email here" required>
+                                    </div>
+
+                                    <button class="submit-btn" type="submit">
+                                        Submit
+                                    </button>
+
+                                    <p id="footerSuccessMsg" style="display:none; margin-top:8px; color:#4CAF50;">
+                                        Submitted successfully!
+                                    </p>
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div class="footer-bottom-wrapper">
-                        <div class="footer-bottom-center-wrapper">
-                            Copyright © 2025-26 Syslatech All Rights Reserved 
+                        <div class="footer-bottom-wrapper">
+                            <div class="footer-bottom-center-wrapper">
+                                Copyright © 2025-26 Syslatech All Rights Reserved
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </footer>
-    </div>
+            </footer>
+        </div>
 
-    <script src="../footer-form.js"></script>
-    <!-- navbar functionality -->
-    <script>
-        // Services dropdown breadcrumb navigation
-        const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
-        const aiContent = document.getElementById('ai-content');
-        const qaContent = document.getElementById('qa-content');
+        <script src="../footer-form.js"></script>
+        <!-- navbar functionality -->
+        <script>
+            // Services dropdown breadcrumb navigation
+            const breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
+            const aiContent = document.getElementById('ai-content');
+            const qaContent = document.getElementById('qa-content');
 
-        // Function to switch category content
-        const switchCategory = (category) => {
-            breadcrumbItems.forEach(b => b.classList.remove('active'));
-            document.querySelector(`.breadcrumb-item[data-category="${category}"]`)
-                .classList.add('active');
+            // Function to switch category content
+            const switchCategory = (category) => {
+                breadcrumbItems.forEach(b => b.classList.remove('active'));
+                document.querySelector(`.breadcrumb-item[data-category="${category}"]`).classList.add('active');
 
-            if (category === 'ai') {
-                aiContent.classList.add('active');
-                qaContent.classList.remove('active');
-            } else if (category === 'qa') {
-                aiContent.classList.remove('active');
-                qaContent.classList.add('active'); // ✅ FIX
-            }
-        };
+                if (category === 'ai') {
+                    aiContent.classList.add('active');
+                    qaContent.classList.remove('active');
+                } else if (category === 'qa') {
+                    aiContent.classList.remove('active');
+                    qaContent.classList.add('active'); // ✅ FIX
+                }
+            };
 
 
-        breadcrumbItems.forEach(item => {
-
-            // Hover = dropdown switch (no navigation)
-            item.addEventListener('mouseenter', () => {
-                switchCategory(item.dataset.category);
-            });
-
-            // Click = normal link navigation (no JS blocking)
-            item.addEventListener('click', () => {
-                // DO NOTHING here
-                // Browser will redirect naturally
-            });
-
-        });
-
-
-        // Handle QA category selector and content switching
-        const qaOptions = document.querySelectorAll('.qa-option');
-        const qaManualContent = document.querySelector('.qa-manual-content');
-        const qaAutomationContent = document.querySelector('.qa-automation-content');
-
-        // Function to switch QA content
-        const switchQAContent = (qaType) => {
-            // Update active QA option
-            qaOptions.forEach(opt => opt.classList.remove('active'));
-            document.querySelector(`.qa-option[data-qa-type="${qaType}"]`).classList.add('active');
-
-            // Show/hide QA content
-            if (qaType === 'manual') {
-                qaManualContent.classList.add('active');
-                qaAutomationContent.classList.remove('active');
-            } else if (qaType === 'automation') {
-                qaManualContent.classList.remove('active');
-                qaAutomationContent.classList.add('active');
-            }
-        };
-
-        qaOptions.forEach(option => {
-
-            // Hover → preview content in dropdown
-            option.addEventListener('mouseenter', () => {
-                switchQAContent(option.dataset.qaType);
-            });
-
-            // Click → allow normal link navigation
-            option.addEventListener('click', () => {
-                // DO NOTHING
-                // browser handles redirect
-            });
-
-        });
-
-
-
-
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking outside or on a direct link
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.hamburger-menu') && !e.target.closest('.mobile-menu')) {
-                hamburgerBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
-
-        // Handle main menu items (Solutions, Services, Why Partner, Tools & Tech)
-        document.querySelectorAll('.mobile-menu-item[data-menu]').forEach(item => {
-            const label = item.querySelector('.mobile-menu-item-label');
-            label.addEventListener('click', (e) => {
-                e.stopPropagation();
-                item.classList.toggle('active');
-            });
-        });
-
-        document.querySelectorAll('.mobile-submenu-item.has-submenu').forEach(item => {
-            item.addEventListener('click', (e) => {
-                e.stopPropagation();
-
-                const currentLevel = item.parentElement;
-
-                // Close other items at the same level
-                currentLevel
-                .querySelectorAll(':scope > .mobile-submenu-item.has-submenu')
-                .forEach(sibling => {
-                    if (sibling !== item) {
-                    sibling.classList.remove('active');
-                    }
+            breadcrumbItems.forEach(item => { // Hover = dropdown switch (no navigation)
+                item.addEventListener('mouseenter', () => {
+                    switchCategory(item.dataset.category);
                 });
 
-                // Toggle current item
-                item.classList.toggle('active');
+                // Click = normal link navigation (no JS blocking)
+                item.addEventListener('click', () => {
+                    // DO NOTHING here
+                    // Browser will redirect naturally
+                });
+
             });
-        });
 
 
+            // Handle QA category selector and content switching
+            const qaOptions = document.querySelectorAll('.qa-option');
+            const qaManualContent = document.querySelector('.qa-manual-content');
+            const qaAutomationContent = document.querySelector('.qa-automation-content');
 
-    </script>
-</body>
+            // Function to switch QA content
+            const switchQAContent = (qaType) => { // Update active QA option
+                qaOptions.forEach(opt => opt.classList.remove('active'));
+                document.querySelector(`.qa-option[data-qa-type="${qaType}"]`).classList.add('active');
+
+                // Show/hide QA content
+                if (qaType === 'manual') {
+                    qaManualContent.classList.add('active');
+                    qaAutomationContent.classList.remove('active');
+                } else if (qaType === 'automation') {
+                    qaManualContent.classList.remove('active');
+                    qaAutomationContent.classList.add('active');
+                }
+            };
+
+            qaOptions.forEach(option => { // Hover → preview content in dropdown
+                option.addEventListener('mouseenter', () => {
+                    switchQAContent(option.dataset.qaType);
+                });
+
+                // Click → allow normal link navigation
+                option.addEventListener('click', () => {
+                    // DO NOTHING
+                    // browser handles redirect
+                });
+
+            });
+
+
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            hamburgerBtn.addEventListener('click', () => {
+                hamburgerBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside or on a direct link
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.hamburger-menu') && !e.target.closest('.mobile-menu')) {
+                    hamburgerBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                }
+            });
+
+            // Handle main menu items (Solutions, Services, Why Partner, Tools & Tech)
+            document.querySelectorAll('.mobile-menu-item[data-menu]').forEach(item => {
+                const label = item.querySelector('.mobile-menu-item-label');
+                label.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    item.classList.toggle('active');
+                });
+            });
+
+            document.querySelectorAll('.mobile-submenu-item.has-submenu').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+
+                    const currentLevel = item.parentElement;
+
+                    // Close other items at the same level
+                    currentLevel.querySelectorAll(':scope > .mobile-submenu-item.has-submenu').forEach(sibling => {
+                        if (sibling !== item) {
+                            sibling.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        </script>
+    </body>
 </html>

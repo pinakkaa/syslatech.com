@@ -18,8 +18,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 130vw;
-    height: calc(65vh);
+    width: 132vw;
+    height: calc(58vh);
     top: 5rem;
     z-index: 99;
 }
@@ -372,7 +372,7 @@
     -webkit-text-fill-color: transparent;
 }
 .our-approuch-description {
-    font-size: 28px;
+    font-size: 22px;
     line-height: 40px;
     font-weight: 400;
     font-family: "Manrope", sans-serif;
@@ -482,17 +482,18 @@
     gap: 30px;
     background-color: #182027;
     padding: 32px;
+    border-radius: 10px;
 }
 .why-support-icon{
     height: 50px;
     width: 50px;
 }
 .why-support-text{
-    font-size: 17px;
+    font-size: 20px;
     letter-spacing: 0%;
     font-weight: 600;
     line-height: 19.4px;
-    color: #999C9F;
+    color: #c1c5c9;
     font-family: "Manrope", sans-serif;
 }
 

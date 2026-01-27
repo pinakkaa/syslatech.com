@@ -409,12 +409,12 @@
     -webkit-text-fill-color: transparent;
 }
 .our-approuch-description {
-    font-size: 22px;
-    line-height: 40px;
+    font-size: 1.2rem;
+    line-height: 30px;
     font-weight: 400;
     font-family: "Manrope", sans-serif;
     max-width: 931px;
-    color: #000000;
+    color: #0000008f;
     text-align: center;
 }
 .features {

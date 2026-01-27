@@ -36,3 +36,7 @@ footerForm.addEventListener("submit", async (e) => {
     footerSubmitBtn.disabled = false;
   }
 });
+
+
+
+

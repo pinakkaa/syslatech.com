@@ -3,12 +3,12 @@
 
 .hero-section {
     width: 120vw;
-    height: calc(90vh);
+    height: calc(70vh);
     /* background-image: url('./Images/Hero-bg-transparent.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 105px 245px 0 118px;
+    padding: 60px 245px 0 118px;
     position: relative;
     background: linear-gradient(90deg, #0798ff0d 0%, #ffffff 100%);
 }
@@ -372,12 +372,12 @@
     -webkit-text-fill-color: transparent;
 }
 .our-approuch-description {
-    font-size: 22px;
-    line-height: 40px;
+    font-size: 1.2rem;
+    line-height: 30px;
     font-weight: 400;
     font-family: "Manrope", sans-serif;
     max-width: 931px;
-    color: #000000;
+    color: #0000008f;
     text-align: center;
 }
 .features {
@@ -474,12 +474,12 @@
 }
 .we-support-card{
     width: 266px;
-    height: 200px;
+    height: 271px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: last;
-    gap: 30px;
+    gap: 1rem;
     background-color: #182027;
     padding: 32px;
     border-radius: 10px;
@@ -1441,4 +1441,13 @@
         line-height: 22px;
         padding: 18px 10px;
     }
+}
+
+
+.why-support-subtext{
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #cfd6dd;
+    line-height: 1.4;
 }

@@ -150,7 +150,8 @@
 .solutions-about-image {
     height: 100%;
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 20px;
 }
 .soutions-about-content-title {
     font-size: 35px;
@@ -410,12 +411,12 @@
     -webkit-text-fill-color: transparent;
 }
 .our-approuch-description {
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 1.2rem;
+    line-height: 30px;
     font-weight: 400;
     font-family: "Manrope", sans-serif;
     max-width: 931px;
-    color: #000000;
+    color: #0000008f;
     text-align: center;
 }
 .features {

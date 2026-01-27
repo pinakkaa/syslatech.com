@@ -490,6 +490,7 @@
     width: 500px;
     margin-right: -28rem;
     margin-top: 5rem;
+    object-fit: cover;
 }
 
 

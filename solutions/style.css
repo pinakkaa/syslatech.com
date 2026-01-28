@@ -911,7 +911,7 @@
 
     /* Hero Section */
     .hero-section {
-        min-height: 65vh;
+        min-height: auto;
         padding: 15px 10px;
     }
     
@@ -951,6 +951,7 @@
     
     .hero-banner-image {
         max-width: 250px;
+        display: none;
     }
 
     /* Solutions About Section */

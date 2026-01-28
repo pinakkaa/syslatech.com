@@ -563,6 +563,7 @@ br{
     .second-bg {
         height: 45vh;
         top: 2rem;
+        display: none;
     }
 
     .ai-services-section {

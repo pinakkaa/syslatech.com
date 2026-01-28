@@ -2,12 +2,12 @@
 
 .hero-section {
     width: 120vw;
-    height: calc(70vh);
+    height: calc(60vh);
     /* background-image: url('./Images/Hero-bg-transparent.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 60px 245px 0 118px;
+    padding: 45px 245px 0 118px;
     position: relative;
     background: linear-gradient(90deg, #0798ff0d 0%, #ffffff 100%);
 }
@@ -18,7 +18,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 130vw;
-    height: calc(60vh);
+    height: calc(55vh);
     top: 3rem;
     z-index: 99;
 }

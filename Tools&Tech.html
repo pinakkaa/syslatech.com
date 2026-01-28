@@ -11,6 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Added Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu.closed {
+            display: none !important;
+        }
+
+    </style>
 </head>
 <body>
     <div class="main">
@@ -411,7 +420,7 @@
                             <div class="dropdown-menu tools-dropdown">
                                 <div class="dropdown-container">
                                     <div class="dropdown-grid cols-2">
-                                        <a href="./Tools&Tech.html#TESTSIGMA" class="dropdown-item">
+                                        <a href="#TESTSIGMA" class="dropdown-item">
                                             <div class="dropdown-icon"><img src="./Images/nav-images/Testigma.png" alt="" class="nav-images-logo"></div>
                                             <div class="dropdown-content">
                                                 <h3>Testsigma
@@ -1180,6 +1189,25 @@
 
 
     </script>
+  <script>
+    const navItem = document.querySelector('.nav-item'); // Tools & Tech parent
+    const dropdown = document.querySelector('.tools-dropdown');
+    const dropdownLinks = document.querySelectorAll('.tools-dropdown .dropdown-item');
+  
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // close dropdown on click
+        dropdown.classList.add('closed');
+  
+        // allow hover again after short time
+        setTimeout(() => {
+          dropdown.classList.remove('closed');
+        }, 300);
+      });
+    });
+  </script>
+  
+
     <a href="#home" id="scrollToTop" class="scroll-to-top" aria-label="Scroll to top">
         <svg version="1.1" id="ios7_x5F_arrows_1_" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewbox="0 0 128 128" style="enable-background:new 0 0 128 128" xml:space="preserve">
             <style>

@@ -4,12 +4,12 @@
 
 .hero-section {
     width: 120vw;
-    height: calc(70vh);
+    height: calc(66vh);
     /* background-image: url('./Images/Hero-bg-transparent.png'); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 60px 245px 0 118px;
+    padding: 45px 245px 0 118px;
     position: relative;
     background: linear-gradient(90deg, #0798ff0d 0%, #ffffff 100%);
 }
@@ -98,7 +98,7 @@
 }
 .hero-title span {
     text-transform: uppercase;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 400;
     line-height: 44px;
     text-align: left;
@@ -113,16 +113,19 @@
     text-align: left;
     color: #000;
 }
-
+br{
+    display: none;
+}
 
 
 /* ai-services-section  */
 
 .ai-services-section{
     width: 100%;
-    padding: 120px 0;
+    padding: 60px 0;
     position: relative;
     background: #01050A;
+    z-index: 999;
 }
 .ai-services-section-wrapper{
     display: flex;

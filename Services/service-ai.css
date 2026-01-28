@@ -8,7 +8,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 60px 245px 0 118px;
+    padding: 45px 245px 0 118px;
     position: relative;
     background: linear-gradient(90deg, #0798ff0d 0%, #ffffff 100%);
 }
@@ -20,7 +20,7 @@
     background-size: contain;
     width: 138vw;
     height: calc(50vh);
-    top: 7rem;
+    top: 6rem;
     z-index: 99;
 }
 .bg-gradent {
@@ -119,9 +119,11 @@
 
 .ai-services-section{
     width: 100%;
-    padding: 120px 0;
+    padding: 60px 0;
     position: relative;
     background: #01050A;
+    z-index: 999;
+
 }
 .ai-services-section-wrapper{
     display: flex;

@@ -5,7 +5,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 60px 245px 0 118px;
+    padding: 45px 245px 0 118px;
     position: relative;
     background: linear-gradient(90deg, #0798ff0d 0%, #ffffff 100%);
     overflow: hidden;
@@ -428,7 +428,7 @@
 /* About Us Section */
 
 .about-us-section {
-    padding: 120px 0;
+    padding: 50px 0;
     width: 100%;
     background: #fff;
     position: relative;

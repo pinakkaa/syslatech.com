@@ -967,7 +967,7 @@
 @media (max-width: 768px) {
     .simple-testimonial-heading {
         font-size: 24px;
-        padding: 1rem 1rem 3rem;
+        padding: 1rem 1rem 0rem;
     }
 
     .simple-slider-wrapper {
@@ -993,11 +993,11 @@
     }
 
     .simple-nav-button.simple-nav-prev {
-        left: 5px;
+        left: -45px;
     }
 
     .simple-nav-button.simple-nav-next {
-        right: 5px;
+        right: -45px;
     }
 }
 

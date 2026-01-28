@@ -15,13 +15,13 @@
 }
 .second-bg {
     position: absolute;
-    background-image: url('../Images/qa-automation-bg-transparent.png');
+    background-image: url(../Images/qa-automation-bg-transparent.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 130vw;
-    height: calc(75vh);
-    top: 5rem;
+    height: calc(70vh);
+    top: 2rem;
     z-index: 99;
 }
 .bg-gradent {

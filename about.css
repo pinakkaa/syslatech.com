@@ -13,13 +13,13 @@
 }
 .second-bg {
     position: absolute;
-    background-image: url('./Images/about-bg-transparent.png');
+    background-image: url(./Images/about-bg-transparent.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 120vw;
-    height: calc(80vh);
-    top: 0;
+    width: 130vw;
+    height: calc(60vh);
+    top: 3rem;
     z-index: 99;
 }
 .bg-gradent {

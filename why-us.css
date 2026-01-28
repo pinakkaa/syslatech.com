@@ -19,7 +19,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     width: 135vw;
-    height: calc(45vh);
+    height: calc(40vh);
     top: 10rem;
     z-index: 99;
 }
@@ -361,7 +361,7 @@
     text-align: left;
     color: #FFFFFF;
     font-family: "CircularStd", sans-serif !important;
-    margin-bottom: 80px;
+    margin-bottom: 0px;
     text-align: center;
 }
 

@@ -18,8 +18,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 125vw;
-    height: calc(65vh);
+    width: 135vw;
+    height: calc(55vh);
     top: 5rem;
     z-index: 99;
 }

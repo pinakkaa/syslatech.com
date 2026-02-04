@@ -471,11 +471,11 @@
     background-color: #011019;
     color: #ffffff;
     border-radius: 5px;
-    font-size: 12px;
+    font-size: 0.85rem;
     line-height: 24px;
     font-weight: 600;
     font-family: "Manrope", sans-serif;
-    max-width: 300px;
+    max-width: 350px;
     text-decoration: none;
     margin-top: 1.5rem;
     transition: all 0.4s ease-in-out;

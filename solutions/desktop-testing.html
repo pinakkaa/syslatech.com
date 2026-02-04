@@ -41,38 +41,29 @@
                     </a>
                     <div
                         class="nav-links-wrapper">
-                         <!-- About Us Dropdown -->
-                         <div class="nav-item">
-                            <a href="../about.html" class="nav-links">
-                                About Us <span class="dropdown-arrow material-icons">expand_more</span>
-                            </a>
-                            <div class="dropdown-menu about-dropdown">
-                                <div class="dropdown-container">
-                                    <div class="about-content">
-                                        <!-- <h2 class="about-title">Who We Are</h2> -->
-                                        <p class="about-description">
-                                            SYSLATECH is a leading provider of AI-powered test automation solutions, 
-                                            dedicated to delivering intelligent testing frameworks that transform how 
-                                            organizations approach quality assurance. With our expertise in cutting-edge 
-                                            tools and technologies, we help businesses achieve faster releases, reduced 
-                                            costs, and superior software quality.
-                                        </p>
-                                        <a href="../about.html" class="about-read-more">
-                                            Read More
-                                            <span class="material-icons">arrow_forward</span>
-                                        </a>
-                                        <!-- <a href="./about.html" class="about-us-btn">
-                                            Read More
-                                            <svg width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="right-arrow">
-                                                <path d="M20.2498 12H4.25"/>
-                                                <path d="M14.5898 17.66C14.5898 14.7503 17.1524 12 20.2499 12"/>
-                                                <path d="M14.5898 6.33984C14.5898 9.24959 17.1524 11.9999 20.2499 11.9999"/>
-                                            </svg>
-                                        </a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- About Us Dropdown -->
+                        <!-- <div class="nav-item">
+                           <a href="../about.html" class="nav-links">
+                               About Us <span class="dropdown-arrow material-icons">expand_more</span>
+                           </a>
+                           <div class="dropdown-menu about-dropdown">
+                               <div class="dropdown-container">
+                                   <div class="about-content">
+                                       <p class="about-description">
+                                           SYSLATECH is a leading provider of AI-powered test automation solutions, 
+                                           dedicated to delivering intelligent testing frameworks that transform how 
+                                           organizations approach quality assurance. With our expertise in cutting-edge 
+                                           tools and technologies, we help businesses achieve faster releases, reduced 
+                                           costs, and superior software quality.
+                                       </p>
+                                       <a href="../about.html" class="about-read-more">
+                                           Read More
+                                           <span class="material-icons">arrow_forward</span>
+                                       </a>
+                                   </div>
+                               </div>
+                           </div>
+                       </div> -->
                         <!-- Solutions Dropdown -->
                         <div class="nav-item">
                             <a href="../solutions/Web-testing.html" class="nav-links">
@@ -546,9 +537,9 @@
                 <div
                     class="mobile-menu-items">
                     <!-- About Us Link (Direct) -->
-                    <div class="mobile-menu-item">
+                    <!-- <div class="mobile-menu-item">
                         <a href="../about.html" class="mobile-menu-item-label">About Us</a>
-                    </div>
+                    </div> -->
                     <!-- Solutions Dropdown -->
                     <div class="mobile-menu-item" data-menu="solutions">
                         <div class="mobile-menu-item-label">
@@ -753,7 +744,8 @@
                 <div class="hero-section-wrapper">
                     <div class="hero-content-wrapper">
                         <img src="../Images/Logo.png" alt="" class="hero-logo">
-                        <h1 class="hero-title"><br><span>Quality Assurance for Robust Desktop Software</span></h1>
+                        <h1 class="hero-title"><br><span>Desktop Application Testing Solutions</span></h1>
+                        <p>Quality Assurance for Robust Desktop Software</p>
                         <button id="openPopupBtn" class="hero-btn">Schedule a Desktop Testing Demo</button>
                     </div>
                     <img src="../Images/desktop testing.png" alt="" class="hero-banner-image">
@@ -849,7 +841,7 @@
                 <div class="our-approuch-section-wrapper">
                     <div class="our-approuch-wrapper">
                         <h2 class="our-approuch-title">OUR APPROACH</h2>
-                        <h5 class="our-approuch-description">We test desktop applications for functionality, stability, and system compatibility across different operating environments. Our process ensures consistent performance and defect-free user experiences.</h5>
+                        <h5 class="our-approuch-description">Our desktop application testing approach focuses on validating functionality, performance, stability, and compatibility across multiple operating systems and hardware environments. We combine manual and automated testing techniques to verify business workflows, system integrations, and user interface behavior. By identifying defects early and ensuring consistent performance under real-world conditions, we help deliver secure, reliable, and high-quality desktop software solutions.</h5>
                     </div>
                     <div class="business-impact-wrapper">
                         <h2 class="our-approuch-title">Business Impact</h2>
@@ -1102,8 +1094,9 @@
 
     </script>
 
-     <!-- Popup Overlay -->
-     <div class="popup-overlay" id="popupOverlay">
+     
+    <!-- Popup Overlay -->
+    <div class="popup-overlay" id="popupOverlay">
         <div class="popup-container">
             <button class="popup-close" id="closePopupBtn">&times;</button>
             
@@ -1118,6 +1111,7 @@
                     <div class="form-group">
                         <label for="name">Name *</label>
                         <input 
+                            style="color: #000;"
                             type="text" 
                             id="name" 
                             name="name" 
@@ -1316,6 +1310,7 @@
                                 <option value="+263">+263 ZW</option>
                             </select>
                             <input 
+                                style="color: #000;"
                                 type="tel" 
                                 name="mobile" 
                                 class="form-input mobile-input" 
@@ -1331,6 +1326,7 @@
                     <div class="form-group">
                         <label for="email">Email Address *</label>
                         <input 
+                            style="color: #000;"
                             type="email" 
                             id="email" 
                             name="email" 

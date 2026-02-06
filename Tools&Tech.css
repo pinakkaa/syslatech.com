@@ -115,10 +115,7 @@
 }
 
 
-
-
 /* solution section  */
-
 
 .solutions-section {
     background: linear-gradient(135deg, #2B8ECB 0%, #30CC8E 100%);
@@ -186,6 +183,8 @@
     padding: 30px;
     transition: all 0.3s ease;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
 .solutions-card:hover {
@@ -197,6 +196,7 @@
     font-size: 48px;
     margin-bottom: 20px;
     color: white;
+    transition: all 0.3s ease;
 }
 
 .solutions-card-title {
@@ -206,6 +206,7 @@
     font-weight: 500;
     text-align: center;
     font-family: "Manrope", sans-serif;
+    transition: all 0.3s ease;
 }
 
 .solutions-card-description {
@@ -215,6 +216,47 @@
     font-weight: 400;
     font-family: "Manrope", sans-serif;
     margin-top: 1rem;
+}
+
+/* Hover white div functionality */
+.solutions-card-hover {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    transition: height 0.4s ease;
+    border-radius: 0 0 13px 13px;
+}
+
+.solutions-card-hover p {
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    line-height: 1.5;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;
+    margin: 0;
+}
+
+.solutions-card:hover .solutions-card-hover {
+    height: 100%;
+    border-radius: 13px;
+}
+
+.solutions-card:hover .solutions-card-hover p {
+    opacity: 1;
+}
+
+.solutions-card:hover .solutions-card-icon,
+.solutions-card:hover .solutions-card-title {
+    opacity: 0;
 }
 
 /* Icon styles */
@@ -242,6 +284,7 @@
     height: 28px;
     width: 28px;
 }
+
 /* Responsive Design */
 @media(max-width: 1100px) {
     .solutions-cards-container {
@@ -308,9 +351,6 @@
         font-size: 13px;
     }
 }
-
-
-
 
 
 
